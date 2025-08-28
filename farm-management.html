@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Farm Task Management - Grainity</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/sprout.png">
+</head>
+<body class="bg-light">
+  <div class="container-fluid min-vh-100 soft-bg">
+    <div class="row h-100">
+      <!-- Sidebar -->
+      <nav class="col-lg-2 d-none d-lg-block bg-white border-end p-0 shadow-sm h-100 position-fixed" style="z-index:2;">
+        <div class="d-flex flex-column h-100">
+          <div class="d-flex align-items-center justify-content-start p-3" style="min-height:64px;">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2 text-success m-0" href="index.html">
+              <img src="images/sprout.png" alt="Logo" style="height:32px;width:32px;object-fit:contain;">
+              Grainity
+            </a>
+          </div>
+          <ul class="nav flex-column w-100">
+            <li class="nav-item mb-2"><a class="nav-link text-dark" href="dashboard.html"><i class="bi bi-grid-1x2 me-2"></i>Dashboard</a></li>
+            <li class="nav-item mb-2"><a class="nav-link active text-success fw-semibold" href="farm-management.html"><i class="bi bi-list-task me-2"></i>Farm Task Management</a></li>
+            <li class="nav-item mb-2"><a class="nav-link text-dark" href="profile.html"><i class="bi bi-person me-2"></i>Profile</a></li>
+            <li class="nav-item mb-2"><a class="nav-link text-dark" href="settings.html"><i class="bi bi-gear me-2"></i>Settings</a></li>
+          </ul>
+          <div class="mt-auto w-100">
+            <ul class="nav flex-column w-100">
+              <li class="nav-item"><a class="nav-link text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Main Content -->
+      <main class="col-lg-10 offset-lg-2 px-4 py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+          <h2 class="fw-bold text-dark mb-0" style="letter-spacing:1px;font-size:2.1rem;">Farm Task Management</h2>
+          <a href="#addField" class="btn btn-success d-flex align-items-center gap-2 px-3 py-1 rounded-3 shadow-sm fw-bold premium-btn" data-bs-toggle="modal" style="font-size:1rem;"><i class="bi bi-plus-circle"></i> Add New Task</a>
+        </div>
+        <div class="card border-0 rounded-4 shadow-sm mb-3 bg-white premium-card">
+          <div class="card-header bg-white fw-bold d-flex align-items-center border-0" style="font-size:1rem;">
+            <i class="bi bi-list-task text-success me-2"></i> Task List
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                  <tr style="font-size:1rem;">
+                    <th>Task Title</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Priority</th>
+                    <th>Start</th>
+                    <th>Due</th>
+                    <th>Status</th>
+                    <th>Progress Notes</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-bold text-dark">Irrigate Field A</td>
+                    <td>Water crops in Field A thoroughly.</td>
+                    <td><span class="badge rounded-pill bg-info text-dark">Irrigation</span></td>
+                    <td><span class="badge rounded-pill bg-danger">High</span></td>
+                    <td>Aug 28, 2025 08:00</td>
+                    <td>Aug 28, 2025 12:00</td>
+                    <td><span class="badge rounded-pill bg-primary">In Progress</span></td>
+                    <td>Started at 8am, 50% done.</td>
+                    <td>
+                      <div class="btn-group" role="group" aria-label="Task Actions">
+                        <button class="btn btn-sm btn-outline-primary rounded-2"><i class="bi bi-eye"></i></button>
+                        <button class="btn btn-sm btn-outline-warning rounded-2"><i class="bi bi-pencil"></i></button>
+                        <button class="btn btn-sm btn-outline-danger rounded-2"><i class="bi bi-trash"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-dark">Fertilize Field B2</td>
+                    <td>Apply nitrogen fertilizer to wheat.</td>
+                    <td><span class="badge rounded-pill bg-success">Fertilizing</span></td>
+                    <td><span class="badge rounded-pill bg-warning text-dark">Medium</span></td>
+                    <td>Aug 29, 2025 09:00</td>
+                    <td>Aug 29, 2025 11:00</td>
+                    <td><span class="badge rounded-pill bg-warning text-dark">Pending</span></td>
+                    <td>Scheduled for tomorrow.</td>
+                    <td>
+                      <div class="btn-group" role="group" aria-label="Task Actions">
+                        <button class="btn btn-sm btn-outline-primary rounded-2"><i class="bi bi-eye"></i></button>
+                        <button class="btn btn-sm btn-outline-warning rounded-2"><i class="bi bi-pencil"></i></button>
+                        <button class="btn btn-sm btn-outline-danger rounded-2"><i class="bi bi-trash"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold text-dark">Harvest Soybeans C3</td>
+                    <td>Begin harvest of soybeans in Field C3.</td>
+                    <td><span class="badge rounded-pill bg-secondary">Harvesting</span></td>
+                    <td><span class="badge rounded-pill bg-danger">High</span></td>
+                    <td>Aug 30, 2025 07:00</td>
+                    <td>Aug 30, 2025 18:00</td>
+                    <td><span class="badge rounded-pill bg-warning text-dark">Pending</span></td>
+                    <td>Ready to start.</td>
+                    <td>
+                      <div class="btn-group" role="group" aria-label="Task Actions">
+                        <button class="btn btn-sm btn-outline-primary rounded-2"><i class="bi bi-eye"></i></button>
+                        <button class="btn btn-sm btn-outline-warning rounded-2"><i class="bi bi-pencil"></i></button>
+                        <button class="btn btn-sm btn-outline-danger rounded-2"><i class="bi bi-trash"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- Farm Task Management Modal -->
+        <!-- Farm Task Management Modal -->
+        <div class="modal fade" id="addField" tabindex="-1" aria-labelledby="addTaskLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content rounded-4">
+              <div class="modal-header border-0">
+                <h5 class="modal-title fw-bold" id="addTaskLabel"><i class="bi bi-plus-circle text-success me-2"></i> Add/Edit Farm Task</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-2">
+                    <label for="taskTitle" class="form-label">Task Title</label>
+                    <input type="text" class="form-control rounded-3" id="taskTitle" placeholder="e.g., 'Irrigate Field A'">
+                  </div>
+                  <div class="mb-2">
+                    <label for="taskDesc" class="form-label">Task Description</label>
+                    <textarea class="form-control rounded-3" id="taskDesc" rows="2" placeholder="Details about the activity"></textarea>
+                  </div>
+                  <div class="mb-2">
+                    <label for="taskCategory" class="form-label">Task Category</label>
+                    <select class="form-select rounded-3" id="taskCategory">
+                      <option>Planting</option>
+                      <option>Irrigation</option>
+                      <option>Fertilizing</option>
+                      <option>Harvesting</option>
+                      <option>Maintenance</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="mb-2">
+                    <label for="priorityLevel" class="form-label">Priority Level</label>
+                    <select class="form-select rounded-3" id="priorityLevel">
+                      <option>Low</option>
+                      <option>Medium</option>
+                      <option>High</option>
+                    </select>
+                  </div>
+                  <hr>
+                  <h6 class="fw-bold">Scheduling</h6>
+                  <div class="mb-2">
+                    <label for="startDateTime" class="form-label">Start Date & Time</label>
+                    <input type="datetime-local" class="form-control rounded-3" id="startDateTime">
+                  </div>
+                  <div class="mb-2">
+                    <label for="dueDateTime" class="form-label">Due Date & Time</label>
+                    <input type="datetime-local" class="form-control rounded-3" id="dueDateTime">
+                  </div>
+                  <div class="mb-2">
+                    <label for="estDuration" class="form-label">Estimated Duration</label>
+                    <div class="input-group">
+                      <input type="number" class="form-control rounded-3" id="estDuration" placeholder="Duration">
+                      <select class="form-select rounded-3" style="max-width:120px;">
+                        <option>Hours</option>
+                        <option>Days</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="mb-2">
+                    <label for="recurrence" class="form-label">Recurrence</label>
+                    <select class="form-select rounded-3" id="recurrence">
+                      <option>None</option>
+                      <option>Daily</option>
+                      <option>Weekly</option>
+                      <option>Monthly</option>
+                    </select>
+                  </div>
+                  <hr>
+                  <h6 class="fw-bold">Progress Tracking</h6>
+                  <div class="mb-2">
+                    <label for="taskStatus" class="form-label">Task Status</label>
+                    <select class="form-select rounded-3" id="taskStatus">
+                      <option>Pending</option>
+                      <option>In Progress</option>
+                      <option>Completed</option>
+                    </select>
+                  </div>
+                  <div class="mb-2">
+                    <label for="progressNotes" class="form-label">Progress Notes/Updates</label>
+                    <textarea class="form-control rounded-3" id="progressNotes" rows="2" placeholder="Notes or updates"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-success w-100 rounded-3 premium-btn">Save Task</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <style>
+          .soft-bg {
+            background: #E8EAE6 !important;
+            min-height: 100vh;
+          }
+          .premium-card, .modal-content {
+            background: #fff !important;
+            border-radius: 1.25rem !important;
+            box-shadow: 0 2px 12px rgba(163,177,138,0.10), 0 1.5px 8px rgba(209,213,219,0.10);
+            border: 1.5px solid #A3B18A !important;
+            color: #2F2F2F !important;
+            transition: box-shadow 0.2s, transform 0.2s;
+          }
+          .premium-card:hover, .modal-content:hover {
+            box-shadow: 0 4px 24px rgba(163,177,138,0.18), 0 2px 12px rgba(209,213,219,0.14);
+            transform: translateY(-2px) scale(1.01);
+          }
+          .card-header, .list-group-item, .table-light {
+            background: #fff !important;
+            border-bottom: 1px solid #D1D5DB !important;
+            color: #2F2F2F !important;
+          }
+          .card-header i, .list-group-item i {
+            color: #A3B18A !important;
+          }
+          .fw-bold.text-dark, .fw-bold.text-secondary {
+            color: #2F2F2F !important;
+          }
+          .text-secondary {
+            color: #555B61 !important;
+          }
+          .btn-success, .premium-btn {
+            background-color: #3A5A40 !important;
+            border-color: #3A5A40 !important;
+            color: #fff !important;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(107,142,35,0.10);
+          }
+          .btn-success:hover, .premium-btn:hover {
+            background-color: #6B8E23 !important;
+            border-color: #6B8E23 !important;
+            color: #fff !important;
+          }
+          .btn-outline-success {
+            color: #3A5A40 !important;
+            border-color: #A3B18A !important;
+            background: #fff !important;
+          }
+          .btn-outline-success:hover {
+            background-color: #A3B18A !important;
+            color: #fff !important;
+            border-color: #6B8E23 !important;
+          }
+          .badge.bg-warning {
+            background-color: #A3B18A !important;
+            color: #2F2F2F !important;
+          }
+          .badge.bg-success {
+            background-color: #6B8E23 !important;
+            color: #fff !important;
+          }
+          .badge.bg-primary {
+            background-color: #3A5A40 !important;
+            color: #fff !important;
+          }
+          .badge.bg-secondary {
+            background-color: #555B61 !important;
+            color: #fff !important;
+          }
+          .border-end {
+            border-right: 1.5px solid #D1D5DB !important;
+          }
+          .bg-white {
+            background: #fff !important;
+          }
+          .text-muted {
+            color: #555B61 !important;
+          }
+        </style>
+      </main>
+    </div>
+  </div>
+  <footer class="bg-white border-top text-muted py-4 mt-5">
+    <div class="container text-center">
+      &copy; 2025 Grainity. All rights reserved.
+    </div>
+  </footer>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grainity</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/sprout.png">
+</head>
+<body class="bg-light">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+        <img src="images/sprout.png" alt="Logo" style="height:32px;width:32px;object-fit:contain;">
+        Grainity
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-vh-100 d-flex align-items-center justify-content-center" style="background: url('images/wut.jpg') center/cover no-repeat;">
+    <div class="container text-center text-white" style="backdrop-filter: brightness(0.6);">
+      <h1 class="display-3 fw-bold mb-3">Streamline Your Farm Tasks</h1>
+      <p class="lead mb-4">Smarter planning. Bigger yields.</p>
+  <a href="login.html" class="btn btn-primary btn-lg shadow">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Resources</h2>
+        <p class="text-muted">Smart solutions to streamline your farm operations</p>
+      </div>
+  <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm border-0">
+              <img src="images/borikat.jpg" class="card-img-top" alt="Harvest Scheduler" style="height:250px;object-fit:cover;">
+            <div class="card-body">
+              <h5 class="card-title">Farm Task Management</h5>
+              <p class="card-text">Easily assign, track, and manage daily farm activities with scheduling and progress monitoring tools.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm border-0">
+              <img src="images/clouds.jpg" class="card-img-top" alt="Seasonal Forecast Integration" style="height:250px;object-fit:cover;">
+            <div class="card-body">
+              <h5 class="card-title">Seasonal Forecast Integration</h5>
+              <p class="card-text">Integrate weather and seasonal forecasts for smarter planning.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm border-0">
+              <img src="images/web.jpg" class="card-img-top" alt="Mobile Access" style="height:250px;object-fit:cover;">
+            <div class="card-body">
+              <h5 class="card-title">Web Access</h5>
+              <p class="card-text">Manage your harvest from anywhere with web access.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-md-6">
+          <img src="images/track.jpg" class="img-fluid rounded shadow" alt="About Harvest Planner Pro">
+        </div>
+        <div class="col-md-6">
+          <h2 class="fw-bold mb-3">About Grainity</h2>
+          <p class="lead">Grainity is designed to empower farmers and agricultural managers with smart, easy-to-use tools for planning, monitoring, and optimizing farm operations. Our mission is to simplify farm management, increase efficiency, and help you make data-driven decisions for a sustainable and more productive future.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 bg-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <h2 class="fw-bold mb-4 text-center">Contact Us</h2>
+          <form>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="name" placeholder="Your Name">
+              <label for="name">Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="email" placeholder="name@example.com">
+              <label for="email">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+              <textarea class="form-control" placeholder="Your Message" id="message" style="height: 120px"></textarea>
+              <label for="message">Message</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-2 mb-md-0">&copy; 2025 Grainity. All rights reserved.</div>
+      <div>
+        <a href="#" class="text-light text-decoration-none me-3">Home</a>
+        <a href="#features" class="text-light text-decoration-none me-3">Resources</a>
+        <a href="#about" class="text-light text-decoration-none me-3">About</a>
+        <a href="#contact" class="text-light text-decoration-none">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

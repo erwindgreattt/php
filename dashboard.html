@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - Grainity</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/sprout.png">
+</head>
+
+<body class="bg-light">
+  <div class="container-fluid min-vh-100 soft-bg">
+    <div class="row h-100">
+      <!-- Sidebar -->
+      <nav class="col-lg-2 d-none d-lg-block bg-white border-end p-0 shadow-sm h-100 position-fixed" style="z-index:2;">
+        <div class="d-flex flex-column h-100">
+          <div class="d-flex align-items-center justify-content-start p-3" style="min-height:64px;">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2 text-success m-0" href="index.html">
+              <img src="images/sprout.png" alt="Logo" style="height:32px;width:32px;object-fit:contain;">
+              Grainity
+            </a>
+          </div>
+          <ul class="nav flex-column w-100">
+            <li class="nav-item mb-2"><a class="nav-link active text-success fw-semibold" href="dashboard.html"><i class="bi bi-grid-1x2 me-2"></i>Dashboard</a></li>
+            <li class="nav-item mb-2"><a class="nav-link text-dark" href="farm-management.html"><i class="bi bi-list-task me-2"></i>Farm Task Management</a></li>
+            <li class="nav-item mb-2"><a class="nav-link text-dark" href="profile.html"><i class="bi bi-person me-2"></i>Profile</a></li>
+            <li class="nav-item mb-2"><a class="nav-link text-dark" href="settings.html"><i class="bi bi-gear me-2"></i>Settings</a></li>
+          </ul>
+          <div class="mt-auto w-100">
+            <ul class="nav flex-column w-100">
+              <li class="nav-item"><a class="nav-link text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+            </ul>
+          </div>
+          </ul>
+        </div>
+      </nav>
+      <!-- Main Content -->
+  <main class="col-lg-10 offset-lg-2 px-4 py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+          <h2 class="fw-bold text-dark mb-0" style="letter-spacing:1px;font-size:2.2rem;">Dashboard Overview</h2>
+        </div>
+        <!-- Neat minimalist weather widget above overview cards -->
+        <div class="row mb-2">
+          <div class="col-auto">
+            <div class="card border-0 rounded-4 shadow-sm premium-card p-2 d-flex flex-row align-items-center gap-2" style="min-width:180px;max-width:220px;">
+              <span style="font-size:1.7rem;">🌤️</span>
+              <div class="d-flex flex-column justify-content-center">
+                <span class="fw-bold" style="font-size:1.1rem;color:#3A5A40;">31°C</span>
+                <span class="text-secondary" style="font-size:0.95rem;">Sunny</span>
+                <span class="text-muted" style="font-size:0.85rem;">Cebu City</span>
+              </div>
+              <div class="ms-2 d-flex flex-column align-items-end justify-content-center" style="font-size:0.85rem;">
+                <span class="text-secondary">🌱 68%</span>
+                <span class="text-secondary">💨 14 km/h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Overview Cards -->
+  <div class="row g-3 mb-3">
+          <div class="col-6 col-md-3">
+            <div class="card border-0 rounded-4 shadow-sm text-center bg-white h-100 premium-card">
+              <div class="card-body py-3">
+                <i class="bi bi-list-check fs-4 text-success mb-2"></i>
+                <h6 class="fw-bold text-secondary mb-1" style="font-size:1rem;">Total Tasks</h6>
+                <div class="fs-5 fw-bold text-dark">24</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card border-0 rounded-4 shadow-sm text-center bg-white h-100 premium-card">
+              <div class="card-body py-3">
+                <i class="bi bi-hourglass-split fs-4 text-warning mb-2"></i>
+                <h6 class="fw-bold text-secondary mb-1" style="font-size:1rem;">Pending Tasks</h6>
+                <div class="fs-5 fw-bold text-dark">7</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card border-0 rounded-4 shadow-sm text-center bg-white h-100 premium-card">
+              <div class="card-body py-3">
+                <i class="bi bi-arrow-repeat fs-4 text-primary mb-2"></i>
+                <h6 class="fw-bold text-secondary mb-1" style="font-size:1rem;">In Progress</h6>
+                <div class="fs-5 fw-bold text-dark">5</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card border-0 rounded-4 shadow-sm text-center bg-white h-100 premium-card">
+              <div class="card-body py-3">
+                <i class="bi bi-check2-circle fs-4 text-success mb-2"></i>
+                <h6 class="fw-bold text-secondary mb-1" style="font-size:1rem;">Completed</h6>
+                <div class="fs-5 fw-bold text-dark">12</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 mb-4">
+  <div class="row g-3 mb-3">
+          <!-- Upcoming Tasks -->
+          <div class="col-lg-7">
+            <div class="card border-0 rounded-4 shadow-sm h-100 bg-white premium-card">
+              <div class="card-header bg-white fw-bold d-flex align-items-center border-0" style="font-size:1rem;">
+                <i class="bi bi-calendar-event text-success me-2"></i> Upcoming Tasks
+              </div>
+              <div class="card-body p-0">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-2">
+                    <div>
+                      <span class="fw-bold text-dark">Irrigate Field A</span>
+                      <span class="text-muted d-block small">Aug 29, 2025</span>
+                    </div>
+                    <span class="badge rounded-pill bg-warning text-dark px-2 py-1">Pending</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-2">
+                    <div>
+                      <span class="fw-bold text-dark">Fertilize Wheat B2</span>
+                      <span class="text-muted d-block small">Aug 30, 2025</span>
+                    </div>
+                    <span class="badge rounded-pill bg-primary px-2 py-1">In Progress</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-2">
+                    <div>
+                      <span class="fw-bold text-dark">Harvest Soybeans C3</span>
+                      <span class="text-muted d-block small">Aug 31, 2025</span>
+                    </div>
+                    <span class="badge rounded-pill bg-success px-2 py-1">Completed</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-2">
+                    <div>
+                      <span class="fw-bold text-dark">Repair Tractor</span>
+                      <span class="text-muted d-block small">Sept 1, 2025</span>
+                    </div>
+                    <span class="badge rounded-pill bg-warning text-dark px-2 py-1">Pending</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-2">
+                    <div>
+                      <span class="fw-bold text-dark">Plant Corn D4</span>
+                      <span class="text-muted d-block small">Sept 2, 2025</span>
+                    </div>
+                    <span class="badge rounded-pill bg-warning text-dark px-2 py-1">Pending</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Notifications/Reminders -->
+          <div class="col-lg-5">
+            <div class="card border-0 rounded-4 shadow-sm h-100 bg-white premium-card">
+              <div class="card-header bg-white fw-bold d-flex align-items-center border-0" style="font-size:1rem;">
+                <i class="bi bi-bell text-danger me-2"></i> Notifications & Reminders
+              </div>
+              <div class="card-body p-0">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex align-items-center border-0 py-2">
+                    <i class="bi bi-exclamation-triangle text-danger me-2 fs-6"></i>
+                    <span class="fw-bold text-dark">Overdue:</span> Fertilize Wheat B2 (Due Aug 28, 2025)
+                  </li>
+                  <li class="list-group-item d-flex align-items-center border-0 py-2">
+                    <i class="bi bi-clock-history text-warning me-2 fs-6"></i>
+                    <span class="fw-bold text-dark">Upcoming:</span> Irrigate Field A (Due Aug 29, 2025)
+                  </li>
+                  <li class="list-group-item d-flex align-items-center border-0 py-2">
+                    <i class="bi bi-info-circle text-primary me-2 fs-6"></i>
+                    <span class="fw-bold text-dark">Reminder:</span> Repair Tractor scheduled for Sept 1, 2025
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Quick Actions -->
+        <div class="row mb-3">
+          <div class="col-lg-7 mb-2 mb-lg-0">
+            <div class="d-flex gap-2">
+              <a href="farm-management.html#addField" class="btn btn-success d-flex align-items-center gap-2 px-3 py-1 rounded-3 shadow-sm fw-bold premium-btn" style="font-size:1rem;"><i class="bi bi-plus-circle"></i> Add New Task</a>
+              <a href="farm-management.html" class="btn btn-outline-success d-flex align-items-center gap-2 px-3 py-1 rounded-3 shadow-sm fw-bold premium-btn" style="font-size:1rem;"><i class="bi bi-list-task"></i> View All Tasks</a>
+            </div>
+          </div>
+        </div>
+        <style>
+          .soft-bg {
+            background: #E8EAE6 !important;
+            min-height: 100vh;
+          }
+          .premium-card {
+            background: #fff !important;
+            border-radius: 1.25rem !important;
+            box-shadow: 0 2px 12px rgba(163,177,138,0.10), 0 1.5px 8px rgba(209,213,219,0.10);
+            border: 1.5px solid #A3B18A !important;
+            color: #2F2F2F !important;
+            transition: box-shadow 0.2s, transform 0.2s;
+          }
+          .premium-card:hover {
+            box-shadow: 0 4px 24px rgba(163,177,138,0.18), 0 2px 12px rgba(209,213,219,0.14);
+            transform: translateY(-2px) scale(1.01);
+          }
+          .card-header, .list-group-item {
+            background: #fff !important;
+            border-bottom: 1px solid #D1D5DB !important;
+            color: #2F2F2F !important;
+          }
+          .card-header i, .list-group-item i {
+            color: #A3B18A !important;
+          }
+          .fw-bold.text-dark, .fw-bold.text-secondary {
+            color: #2F2F2F !important;
+          }
+          .text-secondary {
+            color: #555B61 !important;
+          }
+          .btn-success, .premium-btn {
+            background-color: #3A5A40 !important;
+            border-color: #3A5A40 !important;
+            color: #fff !important;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(107,142,35,0.10);
+          }
+          .btn-success:hover, .premium-btn:hover {
+            background-color: #6B8E23 !important;
+            border-color: #6B8E23 !important;
+            color: #fff !important;
+          }
+          .btn-outline-success {
+            color: #3A5A40 !important;
+            border-color: #A3B18A !important;
+            background: #fff !important;
+          }
+          .btn-outline-success:hover {
+            background-color: #A3B18A !important;
+            color: #fff !important;
+            border-color: #6B8E23 !important;
+          }
+          .badge.bg-warning {
+            background-color: #A3B18A !important;
+            color: #2F2F2F !important;
+          }
+          .badge.bg-success {
+            background-color: #6B8E23 !important;
+            color: #fff !important;
+          }
+          .badge.bg-primary {
+            background-color: #3A5A40 !important;
+            color: #fff !important;
+          }
+          .badge.bg-secondary {
+            background-color: #555B61 !important;
+            color: #fff !important;
+          }
+          .border-end {
+            border-right: 1.5px solid #D1D5DB !important;
+          }
+          .bg-white {
+            background: #fff !important;
+          }
+          .text-muted {
+            color: #555B61 !important;
+          }
+        </style>
+      </main>
+    </div>
+  </div>
+  <footer class="bg-white border-top text-muted py-4 mt-5">
+    <div class="container text-center">
+      &copy; 2025 Grainity. All rights reserved.
+    </div>
+  </footer>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
