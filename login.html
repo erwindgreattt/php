@@ -6,37 +6,51 @@
   <title>Login - Grainity</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-light" style="background: url('images/haysss.jpg') center/cover no-repeat;">
-  <div class="min-vh-100 d-flex align-items-center justify-content-center">
+<body style="background: linear-gradient(135deg, #71c965 0%, #2c6a5d 25%, #001220 50%, #70c367 75%, #71c965 100%); min-height: 100vh;">
+  <div class="min-vh-100 d-flex align-items-center justify-content-center p-3">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-5">
-          <div class="card shadow border-0">
-            <div class="card-body p-4">
-              <div class="text-center mb-4">
-                <img src="images/sprout.png" alt="Harvest Planner Pro Logo" class="rounded mb-3" style="width: 80px; height: 80px; object-fit: cover;">
-                <h2 class="fw-bold text-success">Login</h2>
-                <p class="text-muted">Log in to simplify your farming journey</p>
-              </div>
-              <form>
-                <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com">
-                  <label for="loginEmail">Email address</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="loginPassword" placeholder="Password">
-                  <label for="loginPassword">Password</label>
-                </div>
-                <a href="dashboard.html" class="btn btn-success w-100">Login</a>
-              </form>
-              <div class="mt-3 text-center">
-                <a href="forgot.html" class="text-success text-decoration-none">Forgot password?</a>
-              </div>
+        <div class="col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-lg border-0 rounded-4 position-relative overflow-hidden" style="backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.45); border: 1px solid rgba(113, 201, 101, 0.3);">
+            <!-- Blob Background -->
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 0;">
+              <!-- Top-left green blob -->
+              <div class="position-absolute" style="top: -15%; left: -10%; width: 50%; height: 50%; background: #71c965; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; transform: rotate(-10deg); opacity: 0.2;"></div>
+              <!-- Bottom-right green blob -->
+              <div class="position-absolute" style="bottom: -20%; right: -15%; width: 55%; height: 55%; background: #70c367; border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%; transform: rotate(15deg); opacity: 0.2;"></div>
             </div>
-          </div>
-          <div class="text-center mt-3">
-            <span class="text-white text-decoration-none">Don't have an account?</span>
-            <a href="signup.html" class="text-white text-decoration-none">Sign up</a>
+            <div class="card-body p-4 p-md-5 position-relative" style="z-index: 1;">
+              <div class="text-center mb-4">
+                <img src="images/sprout.png" alt="Grainity Logo" class="rounded-circle mb-3 shadow-sm" style="width: 60px; height: 60px; object-fit: cover;">
+                                 <h3 class="fw-bold text-white mb-2">Welcome Back</h3>
+                 <p class="text-white text-opacity-75 small">Sign in to continue your farming journey</p>
+              </div>
+              
+                             <form>
+                 <div class="form-floating mb-3">
+                   <input type="email" class="form-control border-0 bg-light" id="loginEmail" placeholder="name@example.com" style="border-radius: 12px;">
+                   <label for="loginEmail" style="color: #2c6a5d;">Email address</label>
+                 </div>
+                 
+                 <div class="form-floating mb-4">
+                   <input type="password" class="form-control border-0 bg-light" id="loginPassword" placeholder="Password" style="border-radius: 12px;">
+                   <label for="loginPassword" style="color: #2c6a5d;">Password</label>
+                 </div>
+                 
+                 <a href="dashboard.html" class="btn btn-success w-100 py-3 fw-semibold" style="border-radius: 12px; background: linear-gradient(135deg, #28a745, #20c997); border: none; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);">
+                   Sign In
+                 </a>
+               </form>
+               
+               <div class="text-center mt-4">
+                 <a href="forgot.html" class="text-white text-decoration-none fw-semibold">Forgot password?</a>
+               </div>
+               
+               <div class="text-center mt-4">
+                 <span class="text-white text-opacity-75 small">Don't have an account?</span>
+                 <a href="signup.html" class="text-white text-decoration-none fw-semibold ms-1">Create Account</a>
+               </div>
+            </div>
           </div>
         </div>
       </div>

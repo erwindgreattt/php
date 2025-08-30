@@ -6,70 +6,120 @@
   <title>Grainity</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/sprout.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
-<body class="bg-light">
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+<body style="background: linear-gradient(135deg, #71c965 0%, #2c6a5d 25%, #001220 50%, #70c367 75%, #71c965 100%); min-height: 100vh;">
+  <!-- Enhanced Modern Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top" style="background: rgba(0, 18, 32, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); z-index: 1000;">
     <div class="container">
-      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
-        <img src="images/sprout.png" alt="Logo" style="height:32px;width:32px;object-fit:contain;">
-        Grainity
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-3 text-white" href="index.html">
+        <div class="position-relative">
+          <img src="images/sprout.png" alt="Logo" style="height: 40px; width: 40px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(113, 201, 101, 0.5));">
+          <div class="position-absolute top-50 start-50 translate-middle" style="width: 50px; height: 50px; background: radial-gradient(circle, rgba(113, 201, 101, 0.3) 0%, transparent 70%); border-radius: 50%; animation: pulse 2s infinite;"></div>
+        </div>
+        <span style="background: linear-gradient(135deg, #71c965, #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 1.5rem;">Grainity</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: 1px solid rgba(255, 255, 255, 0.2);">
+        <span class="navbar-toggler-icon" style="background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%28255, 255, 255, 0.8%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27m4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e');"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#features">Resources</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link active text-white fw-semibold px-3 py-2 rounded-3" href="index.html" style="transition: all 0.3s ease; background: rgba(113, 201, 101, 0.2);">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold px-3 py-2 rounded-3" href="#features" style="transition: all 0.3s ease;">Resources</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold px-3 py-2 rounded-3" href="#about" style="transition: all 0.3s ease;">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold px-3 py-2 rounded-3" href="#contact" style="transition: all 0.3s ease;">Developer</a>
+          </li>
+          <li class="nav-item ms-2">
+            <a href="login.html" class="btn d-flex align-items-center gap-2 px-4 py-2 rounded-4 fw-semibold shadow-sm" style="background: linear-gradient(135deg, #71c965, #2c6a5d); color: white; border: none; transition: all 0.3s ease;">
+              <i class="bi bi-box-arrow-in-right"></i>
+              Login
+            </a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="min-vh-100 d-flex align-items-center justify-content-center" style="background: url('images/wut.jpg') center/cover no-repeat;">
-    <div class="container text-center text-white" style="backdrop-filter: brightness(0.6);">
-      <h1 class="display-3 fw-bold mb-3">Streamline Your Farm Tasks</h1>
-      <p class="lead mb-4">Smarter planning. Bigger yields.</p>
-  <a href="login.html" class="btn btn-primary btn-lg shadow">Get Started</a>
+  <!-- Enhanced Hero Section -->
+  <section class="min-vh-100 d-flex align-items-center justify-content-center position-relative overflow-hidden">
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 18, 32, 0.3); z-index: 1;"></div>
+    <div class="container text-center text-white position-relative" style="z-index: 2;">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="display-3 fw-bold mb-4" style="text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); letter-spacing: 2px;">Streamline Your Farm Tasks</h1>
+          <p class="lead mb-5 fw-bold" style="font-size: 1.5rem; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);">Smarter planning. Bigger yields.</p>
+          <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="login.html" class="btn d-flex align-items-center gap-2 px-5 py-3 rounded-4 fw-semibold shadow-lg" style="background: linear-gradient(135deg, #71c965, #2c6a5d); color: white; border: none; font-size: 1.1rem; transition: all 0.3s ease;">
+              <i class="bi bi-rocket-takeoff"></i>
+              Get Started
+            </a>
+            <a href="#features" class="btn d-flex align-items-center gap-2 px-5 py-3 rounded-4 fw-semibold shadow-lg" style="background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); font-size: 1.1rem; transition: all 0.3s ease;">
+              <i class="bi bi-play-circle"></i>
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section id="features" class="py-5 bg-white">
+  <!-- Enhanced Features Section -->
+  <section id="features" class="py-5" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px);">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 class="fw-bold">Resources</h2>
-        <p class="text-muted">Smart solutions to streamline your farm operations</p>
+        <h2 class="fw-bold mb-3" style="color: #2c6a5d; font-size: 2.5rem;">Resources</h2>
+        <p class="text-muted lead">Smart solutions to streamline your farm operations</p>
       </div>
-  <div class="row g-4 justify-content-center">
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 shadow-sm border-0">
-              <img src="images/borikat.jpg" class="card-img-top" alt="Harvest Scheduler" style="height:250px;object-fit:cover;">
-            <div class="card-body">
-              <h5 class="card-title">Farm Task Management</h5>
-              <p class="card-text">Easily assign, track, and manage daily farm activities with scheduling and progress monitoring tools.</p>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 rounded-4 shadow-lg" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); transition: all 0.3s ease; cursor: pointer; overflow: hidden;">
+            <div class="position-relative overflow-hidden">
+              <img src="images/borikat.jpg" class="card-img-top" alt="Farm Task Management" style="height: 250px; object-fit: cover; transition: transform 0.3s ease;">
+              <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(113, 201, 101, 0.2), rgba(44, 106, 93, 0.2)); opacity: 0; transition: opacity 0.3s ease;"></div>
+            </div>
+            <div class="card-body p-4">
+              <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 50px; height: 50px; background: linear-gradient(135deg, #71c965, #2c6a5d);">
+                <i class="bi bi-list-task fs-4 text-white"></i>
+              </div>
+              <h5 class="card-title fw-bold mb-3" style="color: #2c6a5d;">Farm Task Management</h5>
+              <p class="card-text text-muted">Easily assign, track, and manage daily farm activities with scheduling and progress monitoring tools.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 shadow-sm border-0">
-              <img src="images/clouds.jpg" class="card-img-top" alt="Seasonal Forecast Integration" style="height:250px;object-fit:cover;">
-            <div class="card-body">
-              <h5 class="card-title">Seasonal Forecast Integration</h5>
-              <p class="card-text">Integrate weather and seasonal forecasts for smarter planning.</p>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 rounded-4 shadow-lg" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); transition: all 0.3s ease; cursor: pointer; overflow: hidden;">
+            <div class="position-relative overflow-hidden">
+              <img src="images/clouds.jpg" class="card-img-top" alt="Seasonal Forecast Integration" style="height: 250px; object-fit: cover; transition: transform 0.3s ease;">
+              <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(113, 201, 101, 0.2), rgba(44, 106, 93, 0.2)); opacity: 0; transition: opacity 0.3s ease;"></div>
+            </div>
+            <div class="card-body p-4">
+              <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 50px; height: 50px; background: linear-gradient(135deg, #17a2b8, #138496);">
+                <i class="bi bi-cloud-sun fs-4 text-white"></i>
+              </div>
+              <h5 class="card-title fw-bold mb-3" style="color: #2c6a5d;">Seasonal Forecast Integration</h5>
+              <p class="card-text text-muted">Integrate weather and seasonal forecasts for smarter planning and optimal crop management.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 shadow-sm border-0">
-              <img src="images/web.jpg" class="card-img-top" alt="Mobile Access" style="height:250px;object-fit:cover;">
-            <div class="card-body">
-              <h5 class="card-title">Web Access</h5>
-              <p class="card-text">Manage your harvest from anywhere with web access.</p>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 rounded-4 shadow-lg" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); transition: all 0.3s ease; cursor: pointer; overflow: hidden;">
+            <div class="position-relative overflow-hidden">
+              <img src="images/web.jpg" class="card-img-top" alt="Web Access" style="height: 250px; object-fit: cover; transition: transform 0.3s ease;">
+              <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(113, 201, 101, 0.2), rgba(44, 106, 93, 0.2)); opacity: 0; transition: opacity 0.3s ease;"></div>
+            </div>
+            <div class="card-body p-4">
+              <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 50px; height: 50px; background: linear-gradient(135deg, #28a745, #1e7e34);">
+                <i class="bi bi-globe fs-4 text-white"></i>
+              </div>
+              <h5 class="card-title fw-bold mb-3" style="color: #2c6a5d;">Web Access</h5>
+              <p class="card-text text-muted">Manage your farm operations from anywhere with responsive web access and real-time updates.</p>
             </div>
           </div>
         </div>
@@ -77,59 +127,161 @@
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="py-5 bg-light">
+  <!-- Enhanced About Section -->
+  <section id="about" class="py-5" style="background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px);">
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-md-6">
-          <img src="images/track.jpg" class="img-fluid rounded shadow" alt="About Harvest Planner Pro">
+          <div class="position-relative">
+            <img src="images/track.jpg" class="img-fluid rounded-4 shadow-lg" alt="About Grainity" style="transition: all 0.3s ease;">
+            <div class="position-absolute top-0 start-0 w-100 h-100 rounded-4" style="background: linear-gradient(135deg, rgba(113, 201, 101, 0.1), rgba(44, 106, 93, 0.1));"></div>
+          </div>
         </div>
         <div class="col-md-6">
-          <h2 class="fw-bold mb-3">About Grainity</h2>
-          <p class="lead">Grainity is designed to empower farmers and agricultural managers with smart, easy-to-use tools for planning, monitoring, and optimizing farm operations. Our mission is to simplify farm management, increase efficiency, and help you make data-driven decisions for a sustainable and more productive future.</p>
+          <h2 class="fw-bold mb-4" style="color: #2c6a5d; font-size: 2.5rem;">About Grainity</h2>
+          <p class="lead text-muted mb-4">Grainity is designed to empower farmers and agricultural managers with smart, easy-to-use tools for planning, monitoring, and optimizing farm operations.</p>
+          <p class="text-muted">Our mission is to simplify farm management, increase efficiency, and help you make data-driven decisions for a sustainable and more productive future.</p>
+          <div class="d-flex gap-3 mt-4">
+            <div class="d-flex align-items-center gap-2">
+              <div class="rounded-circle" style="width: 12px; height: 12px; background: linear-gradient(135deg, #71c965, #2c6a5d);"></div>
+              <span class="text-muted">Smart Planning</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <div class="rounded-circle" style="width: 12px; height: 12px; background: linear-gradient(135deg, #71c965, #2c6a5d);"></div>
+              <span class="text-muted">Real-time Monitoring</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-5 bg-white">
+  <!-- Enhanced Contact Section -->
+  <section id="contact" class="py-5" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px);">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6">
-          <h2 class="fw-bold mb-4 text-center">Contact Us</h2>
-          <form>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="name" placeholder="Your Name">
-              <label for="name">Name</label>
+      <div class="text-center mb-5">
+        <h2 class="fw-bold mb-3" style="color: #2c6a5d; font-size: 2.5rem;">Meet Our Development Team</h2>
+        <p class="text-muted lead">The talented developers behind Grainity</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-3">
+          <div class="card border-0 rounded-4 shadow-lg overflow-hidden" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); transition: all 0.3s ease; cursor: pointer;">
+            <div class="position-relative overflow-hidden">
+              <img src="images/farmer.jpg" alt="Developer 1" class="card-img-top" style="height: 200px; object-fit: cover; transition: transform 0.3s ease;">
+              <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(113, 201, 101, 0.2), rgba(44, 106, 93, 0.2)); opacity: 0; transition: opacity 0.3s ease;"></div>
             </div>
-            <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="email" placeholder="name@example.com">
-              <label for="email">Email</label>
+            <div class="card-body text-center p-4" style="background: linear-gradient(135deg, rgba(113, 201, 101, 0.1), rgba(44, 106, 93, 0.1));">
+              <h5 class="mb-2 fw-bold" style="color: #2c6a5d;">John Smith</h5>
+              <p class="mb-0 text-muted">Frontend Developer</p>
             </div>
-            <div class="form-floating mb-3">
-              <textarea class="form-control" placeholder="Your Message" id="message" style="height: 120px"></textarea>
-              <label for="message">Message</label>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card border-0 rounded-4 shadow-lg overflow-hidden" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); transition: all 0.3s ease; cursor: pointer;">
+            <div class="position-relative overflow-hidden">
+              <img src="images/farmerrr.jpg" alt="Developer 2" class="card-img-top" style="height: 200px; object-fit: cover; transition: transform 0.3s ease;">
+              <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(113, 201, 101, 0.2), rgba(44, 106, 93, 0.2)); opacity: 0; transition: opacity 0.3s ease;"></div>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Send Message</button>
-          </form>
+            <div class="card-body text-center p-4" style="background: linear-gradient(135deg, rgba(113, 201, 101, 0.1), rgba(44, 106, 93, 0.1));">
+              <h5 class="mb-2 fw-bold" style="color: #2c6a5d;">Sarah Johnson</h5>
+              <p class="mb-0 text-muted">Backend Developer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card border-0 rounded-4 shadow-lg overflow-hidden" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); transition: all 0.3s ease; cursor: pointer;">
+            <div class="position-relative overflow-hidden">
+              <img src="images/papa.jpg" alt="Developer 3" class="card-img-top" style="height: 200px; object-fit: cover; transition: transform 0.3s ease;">
+              <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(113, 201, 101, 0.2), rgba(44, 106, 93, 0.2)); opacity: 0; transition: opacity 0.3s ease;"></div>
+            </div>
+            <div class="card-body text-center p-4" style="background: linear-gradient(135deg, rgba(113, 201, 101, 0.1), rgba(44, 106, 93, 0.1));">
+              <h5 class="mb-2 fw-bold" style="color: #2c6a5d;">Mike Davis</h5>
+              <p class="mb-0 text-muted">UI/UX Designer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card border-0 rounded-4 shadow-lg overflow-hidden" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); transition: all 0.3s ease; cursor: pointer;">
+            <div class="position-relative overflow-hidden">
+              <img src="images/rice.jpg" alt="Developer 4" class="card-img-top" style="height: 200px; object-fit: cover; transition: transform 0.3s ease;">
+              <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(113, 201, 101, 0.2), rgba(44, 106, 93, 0.2)); opacity: 0; transition: opacity 0.3s ease;"></div>
+            </div>
+            <div class="card-body text-center p-4" style="background: linear-gradient(135deg, rgba(113, 201, 101, 0.1), rgba(44, 106, 93, 0.1));">
+              <h5 class="mb-2 fw-bold" style="color: #2c6a5d;">Emily Wilson</h5>
+              <p class="mb-0 text-muted">Full Stack Developer</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-light py-4 mt-5">
+  <!-- Enhanced Footer -->
+  <footer class="py-4 mt-5" style="background: rgba(0, 18, 32, 0.95); backdrop-filter: blur(20px); border-top: 1px solid rgba(255, 255, 255, 0.1);">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-      <div class="mb-2 mb-md-0">&copy; 2025 Grainity. All rights reserved.</div>
-      <div>
-        <a href="#" class="text-light text-decoration-none me-3">Home</a>
-        <a href="#features" class="text-light text-decoration-none me-3">Resources</a>
-        <a href="#about" class="text-light text-decoration-none me-3">About</a>
-        <a href="#contact" class="text-light text-decoration-none">Contact</a>
+      <div class="mb-2 mb-md-0 text-white">&copy; 2025 Grainity. All rights reserved.</div>
+      <div class="d-flex gap-3">
+        <a href="#" class="text-white text-decoration-none fw-semibold" style="transition: all 0.3s ease;">Home</a>
+        <a href="#features" class="text-white text-decoration-none fw-semibold" style="transition: all 0.3s ease;">Resources</a>
+        <a href="#about" class="text-white text-decoration-none fw-semibold" style="transition: all 0.3s ease;">About</a>
+        <a href="#contact" class="text-white text-decoration-none fw-semibold" style="transition: all 0.3s ease;">Developer</a>
       </div>
     </div>
   </footer>
+
+  <style>
+    /* Enhanced Navbar Styles */
+    .navbar-nav .nav-link:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+      backdrop-filter: blur(10px);
+      color: white !important;
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+    
+    /* Enhanced Card Styles */
+    .card:hover {
+      transform: translateY(-10px) !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    .card:hover .card-img-top {
+      transform: scale(1.05) !important;
+    }
+    
+    .card:hover .position-absolute {
+      opacity: 1 !important;
+    }
+    
+    /* Enhanced Button Styles */
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    /* Enhanced Footer Link Styles */
+    footer a:hover {
+      color: #71c965 !important;
+      transform: translateY(-1px);
+    }
+    
+    /* Animations */
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      50% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+    
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

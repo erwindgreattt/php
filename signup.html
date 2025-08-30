@@ -3,48 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sign Up - Harvest Planner Pro</title>
+  <title>Sign Up - Grainity</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-light" style="background: url('images/ha.jpg') center/cover no-repeat;">
-  <div class="min-vh-100 d-flex align-items-center justify-content-center">
+<body style="background: linear-gradient(135deg, #71c965 0%, #2c6a5d 25%, #001220 50%, #70c367 75%, #71c965 100%); min-height: 100vh;">
+  <div class="min-vh-100 d-flex align-items-center justify-content-center p-3">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-5">
-          <div class="card shadow border-0">
-            <div class="card-body p-4">
-              <div class="text-center mb-4">
-                <img src="images/sprout.png" alt="Harvest Planner Pro Logo" class="rounded mb-3" style="width: 80px; height: 80px; object-fit: cover;">
-                <h2 class="fw-bold text-success">Sign Up</h2>
-                <p class="text-muted">Create your Grainity account</p>
-              </div>
+        <div class="col-md-8 col-lg-6 col-xl-5">
+                     <div class="card shadow-lg border-0 rounded-4 position-relative overflow-hidden" style="backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.45); border: 1px solid rgba(113, 201, 101, 0.3);">
+            <!-- Blob Background - Circular Style -->
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 0;">
+              <!-- Large central circle -->
+              <div class="position-absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 80%; background: #71c965; border-radius: 50%; opacity: 0.15;"></div>
+              <!-- Small accent circles -->
+              <div class="position-absolute" style="top: 10%; right: 15%; width: 20%; height: 20%; background: #70c367; border-radius: 50%; opacity: 0.2;"></div>
+              <div class="position-absolute" style="bottom: 15%; left: 10%; width: 15%; height: 15%; background: #2c6a5d; border-radius: 50%; opacity: 0.25;"></div>
+            </div>
+            <div class="card-body p-4 p-md-5 position-relative" style="z-index: 1;">
+                             <div class="text-center mb-4">
+                 <img src="images/sprout.png" alt="Grainity Logo" class="rounded-circle mb-3 shadow-sm" style="width: 60px; height: 60px; object-fit: cover;">
+                 <h3 class="fw-bold text-white mb-2">Create Account</h3>
+                 <p class="text-white text-opacity-75 small">Join Grainity to streamline your farm management</p>
+               </div>
+              
               <form>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="signupFirstName" placeholder="First Name">
-                  <label for="signupFirstName">First Name</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="signupLastName" placeholder="Last Name">
-                  <label for="signupLastName">Last Name</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="signupEmail" placeholder="name@example.com">
-                  <label for="signupEmail">Email address</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="signupPassword" placeholder="Password">
-                  <label for="signupPassword">Password</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="signupConfirm" placeholder="Confirm Password">
-                  <label for="signupConfirm">Confirm Password</label>
-                </div>
-                <button type="submit" class="btn btn-success w-100">Sign Up</button>
+                                 <div class="row g-3">
+                   <div class="col-md-6">
+                     <div class="form-floating">
+                       <input type="text" class="form-control border-0 bg-light" id="signupFirstName" placeholder="First Name" style="border-radius: 12px;">
+                       <label for="signupFirstName" style="color: #2c6a5d;">First Name</label>
+                     </div>
+                   </div>
+                   <div class="col-md-6">
+                     <div class="form-floating">
+                       <input type="text" class="form-control border-0 bg-light" id="signupLastName" placeholder="Last Name" style="border-radius: 12px;">
+                       <label for="signupLastName" style="color: #2c6a5d;">Last Name</label>
+                     </div>
+                   </div>
+                 </div>
+                 
+                 <div class="form-floating mt-3">
+                   <input type="email" class="form-control border-0 bg-light" id="signupEmail" placeholder="name@example.com" style="border-radius: 12px;">
+                   <label for="signupEmail" style="color: #2c6a5d;">Email address</label>
+                 </div>
+                 
+                 <div class="row g-3 mt-3">
+                   <div class="col-md-6">
+                     <div class="form-floating">
+                       <input type="password" class="form-control border-0 bg-light" id="signupPassword" placeholder="Password" style="border-radius: 12px;">
+                       <label for="signupPassword" style="color: #2c6a5d;">Password</label>
+                     </div>
+                   </div>
+                   <div class="col-md-6">
+                     <div class="form-floating">
+                       <input type="password" class="form-control border-0 bg-light" id="signupConfirm" placeholder="Confirm Password" style="border-radius: 12px;">
+                       <label for="signupConfirm" style="color: #2c6a5d;">Confirm Password</label>
+                     </div>
+                   </div>
+                 </div>
+                
+                <button type="submit" class="btn btn-success w-100 mt-4 py-3 fw-semibold" style="border-radius: 12px; background: linear-gradient(135deg, #28a745, #20c997); border: none; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);">
+                  Create Account
+                </button>
               </form>
-              <div class="mt-3 text-center">
-                <span class="text-muted">Already have an account?</span>
-                <a href="login.html" class="text-success text-decoration-none">Login</a>
-              </div>
+              
+                             <div class="text-center mt-4">
+                 <span class="text-white text-opacity-75 small">Already have an account?</span>
+                 <a href="login.html" class="text-white text-decoration-none fw-semibold ms-1">Sign In</a>
+               </div>
             </div>
           </div>
         </div>

@@ -6,187 +6,546 @@
   <title>Profile - Grainity</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/sprout.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
-<body class="bg-light">
-  <div class="container-fluid min-vh-100 soft-bg">
+
+<body style="background: linear-gradient(135deg, #71c965 0%, #2c6a5d 25%, #001220 50%, #70c367 75%, #71c965 100%); min-height: 100vh;">
+  <div class="container-fluid min-vh-100">
     <div class="row h-100">
-      <!-- Sidebar -->
-      <nav class="col-lg-2 d-none d-lg-block bg-white border-end p-0 shadow-sm h-100 position-fixed" style="z-index:2;">
-        <div class="d-flex flex-column h-100">
-          <div class="d-flex align-items-center justify-content-start p-3" style="min-height:64px;">
-            <a class="navbar-brand fw-bold d-flex align-items-center gap-2 text-success m-0" href="index.html">
-              <img src="images/sprout.png" alt="Logo" style="height:32px;width:32px;object-fit:contain;">
-              Grainity
+      <!-- Enhanced Modern Sidebar -->
+      <nav class="col-lg-2 d-none d-lg-block p-0 h-100 position-fixed sidebar-modern" style="z-index: 1000;">
+        <div class="d-flex flex-column h-100 sidebar-container">
+          <!-- Enhanced Logo Section -->
+          <div class="sidebar-logo-section">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-3 text-white m-0" href="index.html">
+              <div class="logo-container">
+                <img src="images/sprout.png" alt="Logo" class="logo-image">
+                <div class="logo-glow"></div>
+              </div>
+              <span class="brand-text">Grainity</span>
             </a>
           </div>
-          <ul class="nav flex-column w-100">
-            <li class="nav-item mb-2"><a class="nav-link text-dark" href="dashboard.html"><i class="bi bi-grid-1x2 me-2"></i>Dashboard</a></li>
-            <li class="nav-item mb-2"><a class="nav-link text-dark" href="farm-management.html"><i class="bi bi-list-task me-2"></i>Farm Task Management</a></li>
-            <li class="nav-item mb-2"><a class="nav-link active text-success fw-semibold" href="profile.html"><i class="bi bi-person me-2"></i>Profile</a></li>
-            <li class="nav-item mb-2"><a class="nav-link text-dark" href="settings.html"><i class="bi bi-gear me-2"></i>Settings</a></li>
-          </ul>
-          <div class="mt-auto w-100">
-            <ul class="nav flex-column w-100">
-              <li class="nav-item"><a class="nav-link text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+          
+          <!-- Enhanced Navigation Menu -->
+          <div class="flex-grow-1 sidebar-nav">
+            <div class="nav-section">
+              <h6 class="nav-section-title">MAIN MENU</h6>
+              <ul class="nav flex-column gap-1">
+                <li class="nav-item">
+                  <a class="nav-link sidebar-link" href="dashboard.html">
+                    <div class="link-icon">
+                      <i class="bi bi-grid-1x2"></i>
+                    </div>
+                    <span class="link-text">Dashboard</span>
+                    <div class="link-indicator"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link sidebar-link" href="farm-management.html">
+                    <div class="link-icon">
+                      <i class="bi bi-list-task"></i>
+                    </div>
+                    <span class="link-text">Farm Tasks</span>
+                    <div class="link-indicator"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active sidebar-link" href="profile.html">
+                    <div class="link-icon">
+                      <i class="bi bi-person"></i>
+                    </div>
+                    <span class="link-text">Profile</span>
+                    <div class="link-indicator"></div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link sidebar-link" href="settings.html">
+                    <div class="link-icon">
+                      <i class="bi bi-gear"></i>
+                    </div>
+                    <span class="link-text">Settings</span>
+                    <div class="link-indicator"></div>
+                  </a>
+                </li>
             </ul>
+            </div>
+            
+
+          </div>
+          
+          <!-- Enhanced Logout Section -->
+          <div class="sidebar-logout-section">
+            <a class="nav-link sidebar-link logout-link" href="login.html">
+              <div class="link-icon">
+                <i class="bi bi-box-arrow-right"></i>
+              </div>
+              <span class="link-text">Logout</span>
+              <div class="link-indicator"></div>
+            </a>
           </div>
         </div>
       </nav>
+
       <!-- Main Content -->
       <main class="col-lg-10 offset-lg-2 px-4 py-4">
+        <!-- Header Section -->
         <div class="d-flex justify-content-between align-items-center mb-4">
-          <h2 class="fw-bold text-dark">Profile</h2>
+          <div>
+            <h1 class="fw-bold text-white mb-1" style="font-size: 2.5rem; letter-spacing: 1px;">Profile</h1>
+            <p class="text-white-50 mb-0">Manage your account information</p>
+          </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-md-7 col-lg-6">
-            <div class="card border-0 rounded-4 shadow-sm mb-4 premium-card">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-center mb-3 gap-3">
-                  <img src="images/user.png" alt="User" class="rounded-circle border shadow-sm" style="width:56px;height:56px;object-fit:cover;">
-                  <div>
-                    <h5 class="fw-bold mb-0 text-dark" style="letter-spacing:0.5px;">John Doe <i class="bi bi-patch-check-fill text-success ms-1"></i></h5>
-                    <span class="badge rounded-pill bg-success text-light">Manager</span>
+
+        <!-- Profile Section -->
+        <div class="row">
+          <div class="col-lg-4">
+            <!-- Profile Card -->
+            <div class="card border-0 rounded-4 shadow-lg h-100" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(20px); border: 1px solid rgba(113, 201, 101, 0.3);">
+              <div class="card-body p-4 text-center">
+                <div class="position-relative d-inline-block mb-4">
+                  <img src="images/farmer.jpg" alt="User" class="rounded-circle border shadow-lg" style="width: 120px; height: 120px; object-fit: cover;">
+                  <div class="position-absolute bottom-0 end-0 bg-success rounded-circle border border-white" style="width: 30px; height: 30px;"></div>
+                  <button class="btn btn-sm position-absolute top-0 end-0 bg-white rounded-circle shadow-sm" style="width: 35px; height: 35px; border: none;">
+                    <i class="bi bi-camera text-dark"></i>
+                  </button>
+                </div>
+                
+                <h4 class="fw-bold mb-2 text-white">
+                  John Farmer 
+                  <i class="bi bi-patch-check-fill text-success ms-2"></i>
+                </h4>
+                <span class="badge rounded-pill px-3 py-2 mb-3" style="background: linear-gradient(135deg, #28a745, #1e7e34); color: white;">Farm Manager</span>
+                
+                <div class="row g-3 text-start">
+                  <div class="col-12">
+                    <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
+                      <small class="text-white-50 d-block mb-1">Email</small>
+                      <span class="fw-semibold text-white">john.farmer@email.com</span>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
+                      <small class="text-white-50 d-block mb-1">Username</small>
+                      <span class="fw-semibold text-white">johnfarmer</span>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
+                      <small class="text-white-50 d-block mb-1">Member Since</small>
+                      <span class="fw-semibold text-white">March 2024</span>
+                    </div>
                   </div>
                 </div>
-                <div class="row g-2 mb-2">
-                  <div class="col-6"><span class="fw-bold">First Name:</span> John</div>
-                  <div class="col-6"><span class="fw-bold">Last Name:</span> Doe</div>
-                </div>
-                <div class="mb-2"><span class="fw-bold">Role:</span> Manager</div>
-                <div class="mb-2"><span class="fw-bold">Email:</span> johndoe@email.com</div>
-                <div class="mb-2"><span class="fw-bold">Username:</span> johndoe</div>
-                <div class="mb-2"><span class="fw-bold">Password:</span> <span class="text-muted">••••••••</span></div>
-                <button class="btn btn-success mt-3 w-100 premium-btn d-flex align-items-center justify-content-center gap-2" type="button" data-bs-toggle="collapse" data-bs-target="#editProfileCollapse" aria-expanded="false" aria-controls="editProfileCollapse"><i class="bi bi-pencil-square"></i> Edit Profile</button>
               </div>
             </div>
-            <div class="collapse" id="editProfileCollapse">
-              <div class="card border-0 rounded-4 shadow-sm premium-card">
+          </div>
+          
+          <div class="col-lg-8">
+            <!-- Profile Information -->
+            <div class="card border-0 rounded-4 shadow-lg h-100" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(20px); border: 1px solid rgba(113, 201, 101, 0.3);">
+              <div class="card-header bg-transparent border-0 p-4">
+                <h5 class="fw-bold text-white mb-0 d-flex align-items-center gap-2">
+                  <i class="bi bi-person"></i>
+                  Profile Information
+                </h5>
+              </div>
+              <div class="card-body p-4">
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
+                      <small class="text-white-50 d-block mb-1">First Name</small>
+                      <span class="fw-semibold text-white">John</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
+                      <small class="text-white-50 d-block mb-1">Last Name</small>
+                      <span class="fw-semibold text-white">Farmer</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
+                      <small class="text-white-50 d-block mb-1">Role</small>
+                      <span class="fw-semibold text-white">Farm Manager</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
+                      <small class="text-white-50 d-block mb-1">Password</small>
+                      <span class="text-white-50">••••••••</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <button class="btn w-100 py-3 rounded-4 fw-semibold shadow-sm d-flex align-items-center justify-content-center gap-2" type="button" data-bs-toggle="collapse" data-bs-target="#editProfileCollapse" aria-expanded="false" aria-controls="editProfileCollapse" style="background: linear-gradient(135deg, #71c965, #2c6a5d); color: white; border: none;">
+                  <i class="bi bi-pencil-square"></i>
+                  Edit Profile
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Edit Profile Form -->
+        <div class="collapse" id="editProfileCollapse">
+          <div class="row mt-4">
+            <div class="col-12">
+              <div class="card border-0 rounded-4 shadow-lg" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(20px); border: 1px solid rgba(113, 201, 101, 0.3);">
+                <div class="card-header bg-transparent border-0 p-4">
+                  <h5 class="fw-bold text-white mb-0 d-flex align-items-center gap-2">
+                    <i class="bi bi-pencil-square"></i>
+                    Edit Profile Information
+                  </h5>
+                </div>
                 <div class="card-body p-4">
                   <form>
-                    <div class="mb-2">
-                      <label for="firstName" class="form-label">First Name</label>
-                      <input type="text" class="form-control rounded-3" id="firstName" placeholder="Enter first name" value="John">
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label for="firstName" class="form-label fw-semibold text-white">First Name</label>
+                        <input type="text" class="form-control rounded-3 border-0" id="firstName" placeholder="Enter first name" value="John" style="background: rgba(255, 255, 255, 0.9); color: #333;">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="lastName" class="form-label fw-semibold text-white">Last Name</label>
+                        <input type="text" class="form-control rounded-3 border-0" id="lastName" placeholder="Enter last name" value="Farmer" style="background: rgba(255, 255, 255, 0.9); color: #333;">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="role" class="form-label fw-semibold text-white">Role</label>
+                        <select class="form-select rounded-3 border-0" id="role" style="background: rgba(255, 255, 255, 0.9); color: #333;">
+                          <option>Admin</option>
+                          <option selected>Farm Manager</option>
+                          <option>Worker</option>
+                          <option>Farmer</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="email" class="form-label fw-semibold text-white">Email</label>
+                        <input type="email" class="form-control rounded-3 border-0" id="email" placeholder="Enter email address" value="john.farmer@email.com" style="background: rgba(255, 255, 255, 0.9); color: #333;">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="username" class="form-label fw-semibold text-white">Username</label>
+                        <input type="text" class="form-control rounded-3 border-0" id="username" placeholder="Enter username" value="johnfarmer" style="background: rgba(255, 255, 255, 0.9); color: #333;">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="password" class="form-label fw-semibold text-white">Password</label>
+                        <input type="password" class="form-control rounded-3 border-0" id="password" placeholder="Enter password" value="password123" style="background: rgba(255, 255, 255, 0.9); color: #333;">
+                      </div>
                     </div>
-                    <div class="mb-2">
-                      <label for="lastName" class="form-label">Last Name</label>
-                      <input type="text" class="form-control rounded-3" id="lastName" placeholder="Enter last name" value="Doe">
+                    
+                    <div class="d-flex gap-3 mt-4">
+                      <button type="submit" class="btn flex-grow-1 py-3 rounded-4 fw-semibold shadow-sm" style="background: linear-gradient(135deg, #71c965, #2c6a5d); color: white; border: none;">
+                        <i class="bi bi-save me-2"></i>
+                        Save Changes
+                      </button>
+                      <button type="button" class="btn py-3 rounded-4 fw-semibold shadow-sm" data-bs-toggle="collapse" data-bs-target="#editProfileCollapse" style="background: rgba(255, 255, 255, 0.9); color: #2c6a5d; border: 1px solid rgba(44, 106, 93, 0.2);">
+                        Cancel
+                      </button>
                     </div>
-                    <div class="mb-2">
-                      <label for="role" class="form-label">Role</label>
-                      <select class="form-select rounded-3" id="role">
-                        <option>Admin</option>
-                        <option selected>Manager</option>
-                        <option>Worker</option>
-                        <option>Farmer</option>
-                      </select>
-                    </div>
-                    <div class="mb-2">
-                      <label for="email" class="form-label">Email</label>
-                      <input type="email" class="form-control rounded-3" id="email" placeholder="Enter email address" value="johndoe@email.com">
-                    </div>
-                    <div class="mb-2">
-                      <label for="username" class="form-label">Username</label>
-                      <input type="text" class="form-control rounded-3" id="username" placeholder="Enter username" value="johndoe">
-                    </div>
-                    <div class="mb-2">
-                      <label for="password" class="form-label">Password</label>
-                      <input type="password" class="form-control rounded-3" id="password" placeholder="Enter password" value="password123">
-                    </div>
-                    <button type="submit" class="btn btn-success w-100 rounded-3 premium-btn"><i class="bi bi-save me-1"></i> Save Changes</button>
                   </form>
                 </div>
               </div>
             </div>
-            <style>
-              .soft-bg {
-                background: #E8EAE6 !important;
-                min-height: 100vh;
-              }
-              .premium-card {
-                background: #fff !important;
-                border-radius: 1.25rem !important;
-                box-shadow: 0 2px 12px rgba(163,177,138,0.10), 0 1.5px 8px rgba(209,213,219,0.10);
-                border: 1.5px solid #A3B18A !important;
-                color: #2F2F2F !important;
-                transition: box-shadow 0.2s, transform 0.2s;
-              }
-              .premium-card:hover {
-                box-shadow: 0 4px 24px rgba(163,177,138,0.18), 0 2px 12px rgba(209,213,219,0.14);
-                transform: translateY(-2px) scale(1.01);
-              }
-              .card-header, .list-group-item {
-                background: #fff !important;
-                border-bottom: 1px solid #D1D5DB !important;
-                color: #2F2F2F !important;
-              }
-              .card-header i, .list-group-item i {
-                color: #A3B18A !important;
-              }
-              .fw-bold.text-dark, .fw-bold.text-secondary {
-                color: #2F2F2F !important;
-              }
-              .text-secondary {
-                color: #555B61 !important;
-              }
-              .btn-success, .premium-btn {
-                background-color: #3A5A40 !important;
-                border-color: #3A5A40 !important;
-                color: #fff !important;
-                font-weight: 600;
-                box-shadow: 0 2px 8px rgba(107,142,35,0.10);
-              }
-              .btn-success:hover, .premium-btn:hover {
-                background-color: #6B8E23 !important;
-                border-color: #6B8E23 !important;
-                color: #fff !important;
-              }
-              .btn-outline-success {
-                color: #3A5A40 !important;
-                border-color: #A3B18A !important;
-                background: #fff !important;
-              }
-              .btn-outline-success:hover {
-                background-color: #A3B18A !important;
-                color: #fff !important;
-                border-color: #6B8E23 !important;
-              }
-              .badge.bg-warning {
-                background-color: #A3B18A !important;
-                color: #2F2F2F !important;
-              }
-              .badge.bg-success {
-                background-color: #6B8E23 !important;
-                color: #fff !important;
-              }
-              .badge.bg-primary {
-                background-color: #3A5A40 !important;
-                color: #fff !important;
-              }
-              .badge.bg-secondary {
-                background-color: #555B61 !important;
-                color: #fff !important;
-              }
-              .border-end {
-                border-right: 1.5px solid #D1D5DB !important;
-              }
-              .bg-white {
-                background: #fff !important;
-              }
-              .text-muted {
-                color: #555B61 !important;
-              }
-            </style>
           </div>
         </div>
       </main>
     </div>
   </div>
-  <footer class="bg-white border-top text-muted py-4 mt-5">
-    <div class="container text-center">
-      &copy; 2025 Grainity. All rights reserved.
-    </div>
-  </footer>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+            <style>
+    /* Enhanced Sidebar Styles */
+    .sidebar-modern {
+      background: linear-gradient(180deg, rgba(0, 18, 32, 0.95) 0%, rgba(44, 106, 93, 0.9) 100%);
+      backdrop-filter: blur(20px);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sidebar-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(113, 201, 101, 0.1) 0%, rgba(44, 106, 93, 0.1) 50%, rgba(0, 18, 32, 0.1) 100%);
+      pointer-events: none;
+    }
+
+    /* Logo Section */
+    .sidebar-logo-section {
+      padding: 2rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .logo-image {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(113, 201, 101, 0.5));
+      transition: all 0.3s ease;
+    }
+
+    .logo-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, rgba(113, 201, 101, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    .brand-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #71c965, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Navigation Sections */
+    .sidebar-nav {
+      padding: 1.5rem 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .nav-section {
+      margin-bottom: 2rem;
+    }
+
+    .nav-section-title {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+    }
+
+    /* Sidebar Links */
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.875rem 1rem;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      border-radius: 12px;
+      margin-bottom: 0.25rem;
+      position: relative;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .sidebar-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .sidebar-link:hover::before {
+      left: 100%;
+    }
+
+    .sidebar-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      transform: translateX(8px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar-link.active {
+      background: linear-gradient(135deg, rgba(113, 201, 101, 0.2), rgba(44, 106, 93, 0.2));
+      color: white;
+      box-shadow: 0 4px 15px rgba(113, 201, 101, 0.3);
+    }
+
+    .link-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar-link:hover .link-icon {
+      background: linear-gradient(135deg, #71c965, #2c6a5d);
+      transform: scale(1.1);
+    }
+
+    .sidebar-link.active .link-icon {
+      background: linear-gradient(135deg, #71c965, #2c6a5d);
+      box-shadow: 0 0 15px rgba(113, 201, 101, 0.5);
+    }
+
+    .link-text {
+      font-weight: 500;
+      font-size: 0.95rem;
+      flex-grow: 1;
+    }
+
+    .link-indicator {
+      width: 4px;
+      height: 20px;
+      background: linear-gradient(135deg, #71c965, #2c6a5d);
+      border-radius: 2px;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar-link.active .link-indicator {
+      opacity: 1;
+      transform: scaleY(1.2);
+    }
+
+    /* User Section */
+    .sidebar-user-section {
+      padding: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .user-profile:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .user-avatar {
+      position: relative;
+    }
+
+    .avatar-image {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(113, 201, 101, 0.5);
+    }
+
+    .status-indicator {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid rgba(0, 18, 32, 0.95);
+    }
+
+    .status-indicator.online {
+      background: #28a745;
+      box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+    }
+
+    .user-info {
+      flex-grow: 1;
+    }
+
+    .user-name {
+      color: white;
+                font-weight: 600;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .user-role {
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0;
+      font-size: 0.8rem;
+    }
+
+    /* Logout Section */
+    .sidebar-logout-section {
+      padding: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 2;
+      margin-top: auto;
+    }
+
+    .logout-link {
+      background: rgba(220, 53, 69, 0.1);
+      border: 1px solid rgba(220, 53, 69, 0.2);
+    }
+
+    .logout-link:hover {
+      background: rgba(220, 53, 69, 0.2);
+      border-color: rgba(220, 53, 69, 0.4);
+    }
+
+    /* Animations */
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      50% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+
+    /* Card and Button Styles */
+    .card {
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .btn {
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    /* Form Styles */
+    .form-control:focus, .form-select:focus {
+      box-shadow: 0 0 0 0.2rem rgba(113, 201, 101, 0.25);
+      border-color: #71c965;
+              }
+            </style>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
