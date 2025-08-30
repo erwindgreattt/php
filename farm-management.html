@@ -8,9 +8,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/sprout.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body style="background: linear-gradient(135deg, #71c965 0%, #2c6a5d 25%, #001220 50%, #70c367 75%, #71c965 100%); min-height: 100vh;">
+  <body>
   <div class="container-fluid min-vh-100">
     <div class="row h-100">
       <!-- Enhanced Modern Sidebar -->
@@ -68,10 +69,8 @@
                     <div class="link-indicator"></div>
                   </a>
                 </li>
-            </ul>
+              </ul>
             </div>
-            
-
           </div>
           
           <!-- Enhanced Logout Section -->
@@ -95,14 +94,14 @@
             <h1 class="fw-bold text-white mb-1" style="font-size: 2.5rem; letter-spacing: 1px;">Farm Task Management</h1>
             <p class="text-white-50 mb-0">Manage and track all your farm activities</p>
           </div>
-          <a href="#addField" class="btn d-flex align-items-center gap-2 px-4 py-3 rounded-4 fw-semibold shadow-sm" data-bs-toggle="modal" style="background: linear-gradient(135deg, #71c965, #2c6a5d); color: white; border: none;">
-            <i class="bi bi-plus-circle"></i>
-            Add New Task
-          </a>
+          <button class="btn btn-gradient d-flex align-items-center gap-2 px-4 py-3 rounded-4 fw-semibold shadow-sm" data-bs-toggle="modal" data-bs-target="#addField">
+            <i class="bi bi-plus-circle-fill"></i>
+            Create New Task
+          </button>
         </div>
 
         <!-- Task Management Card -->
-        <div class="card border-0 rounded-4 shadow-lg" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(20px); border: 1px solid rgba(113, 201, 101, 0.3);">
+        <div class="card card-modern border-0 rounded-4 shadow-lg">
           <div class="card-header bg-transparent border-0 p-4 pb-0">
             <h5 class="fw-bold mb-0 d-flex align-items-center gap-2 text-white">
               <i class="bi bi-list-task"></i>
@@ -126,7 +125,7 @@
             </div>
             
             <div class="table-responsive">
-              <table class="table table-hover align-middle mb-0" id="taskTable">
+              <table class="table table-modern table-hover align-middle mb-0" id="taskTable">
                 <thead>
                   <tr style="font-size: 1rem; background: rgba(113, 201, 101, 0.1);">
                     <th style="color: #2c6a5d; font-weight: 600;">Task Title</th>
@@ -144,7 +143,7 @@
                     <td><span class="badge rounded-pill px-3 py-2" style="background: linear-gradient(135deg, #007bff, #0056b3); color: white;">In Progress</span></td>
                     <td>
                       <div class="d-flex gap-2">
-                        <button class="btn btn-sm rounded-3" onclick="viewTask('Irrigate Field A', 'Water crops in Field A thoroughly.', 'Irrigation', 'High', 'Aug 28, 2025 08:00', 'Aug 28, 2025 12:00', 'In Progress', 'Started at 8am, 50% done.')" style="background: rgba(0, 123, 255, 0.1); color: #0056b3; border: 1px solid rgba(0, 123, 255, 0.2);"><i class="bi bi-eye"></i></button>
+                        <button class="btn btn-sm rounded-3" data-bs-toggle="modal" data-bs-target="#viewTaskModal" style="background: rgba(0, 123, 255, 0.1); color: #0056b3; border: 1px solid rgba(0, 123, 255, 0.2);"><i class="bi bi-eye"></i></button>
                         <button class="btn btn-sm rounded-3" style="background: rgba(255, 193, 7, 0.1); color: #fd7e14; border: 1px solid rgba(255, 193, 7, 0.2);"><i class="bi bi-pencil"></i></button>
                         <button class="btn btn-sm rounded-3" style="background: rgba(220, 53, 69, 0.1); color: #dc3545; border: 1px solid rgba(220, 53, 69, 0.2);"><i class="bi bi-trash"></i></button>
                       </div>
@@ -157,7 +156,7 @@
                     <td><span class="badge rounded-pill px-3 py-2" style="background: linear-gradient(135deg, #ffc107, #fd7e14); color: white;">Pending</span></td>
                     <td>
                       <div class="d-flex gap-2">
-                        <button class="btn btn-sm rounded-3" onclick="viewTask('Fertilize Field B2', 'Apply nitrogen fertilizer to wheat.', 'Fertilizing', 'Medium', 'Aug 29, 2025 09:00', 'Aug 29, 2025 11:00', 'Pending', 'Scheduled for tomorrow.')" style="background: rgba(0, 123, 255, 0.1); color: #0056b3; border: 1px solid rgba(0, 123, 255, 0.2);"><i class="bi bi-eye"></i></button>
+                        <button class="btn btn-sm rounded-3" data-bs-toggle="modal" data-bs-target="#viewTaskModal" style="background: rgba(0, 123, 255, 0.1); color: #0056b3; border: 1px solid rgba(0, 123, 255, 0.2);"><i class="bi bi-eye"></i></button>
                         <button class="btn btn-sm rounded-3" style="background: rgba(255, 193, 7, 0.1); color: #fd7e14; border: 1px solid rgba(255, 193, 7, 0.2);"><i class="bi bi-pencil"></i></button>
                         <button class="btn btn-sm rounded-3" style="background: rgba(220, 53, 69, 0.1); color: #dc3545; border: 1px solid rgba(220, 53, 69, 0.2);"><i class="bi bi-trash"></i></button>
                       </div>
@@ -170,7 +169,7 @@
                     <td><span class="badge rounded-pill px-3 py-2" style="background: linear-gradient(135deg, #ffc107, #fd7e14); color: white;">Pending</span></td>
                     <td>
                       <div class="d-flex gap-2">
-                        <button class="btn btn-sm rounded-3" onclick="viewTask('Harvest Soybeans C3', 'Begin harvest of soybeans in Field C3.', 'Harvesting', 'High', 'Aug 30, 2025 07:00', 'Aug 30, 2025 18:00', 'Pending', 'Ready to start.')" style="background: rgba(0, 123, 255, 0.1); color: #0056b3; border: 1px solid rgba(0, 123, 255, 0.2);"><i class="bi bi-eye"></i></button>
+                        <button class="btn btn-sm rounded-3" data-bs-toggle="modal" data-bs-target="#viewTaskModal" style="background: rgba(0, 123, 255, 0.1); color: #0056b3; border: 1px solid rgba(0, 123, 255, 0.2);"><i class="bi bi-eye"></i></button>
                         <button class="btn btn-sm rounded-3" style="background: rgba(255, 193, 7, 0.1); color: #fd7e14; border: 1px solid rgba(255, 193, 7, 0.2);"><i class="bi bi-pencil"></i></button>
                         <button class="btn btn-sm rounded-3" style="background: rgba(220, 53, 69, 0.1); color: #dc3545; border: 1px solid rgba(220, 53, 69, 0.2);"><i class="bi bi-trash"></i></button>
                       </div>
@@ -182,50 +181,50 @@
           </div>
         </div>
 
-        <!-- Farm Task Management Modal -->
-        <div class="modal fade" id="addField" tabindex="-1" aria-labelledby="addTaskLabel" aria-hidden="true">
+        <!-- Improved Farm Task Management Modal -->
+        <div class="modal fade modal-modern" id="addField" tabindex="-1" aria-labelledby="addTaskLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
-            <div class="modal-content border-0 rounded-4 shadow-lg" style="background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px);">
-              <div class="modal-header border-0 p-4">
+            <div class="modal-content border-0 rounded-4 shadow-lg" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
+              <div class="modal-header border-0 p-4" style="background: linear-gradient(135deg, rgba(113, 201, 101, 0.1), rgba(44, 106, 93, 0.1)); border-radius: 1rem 1rem 0 0;">
                 <h5 class="modal-title fw-bold d-flex align-items-center gap-2" id="addTaskLabel" style="color: #2c6a5d;">
-                  <i class="bi bi-plus-circle"></i>
+                  <i class="bi bi-plus-circle-fill"></i>
                   Add/Edit Farm Task
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body p-4">
                 <form>
-                  <div class="row g-3">
+                  <div class="row g-4">
                     <div class="col-md-6">
-                      <label for="taskTitle" class="form-label fw-semibold" style="color: #2c6a5d;">Task Title</label>
-                      <input type="text" class="form-control rounded-3 border-0" id="taskTitle" placeholder="e.g., 'Irrigate Field A'" style="background: rgba(113, 201, 101, 0.1);">
-                  </div>
-                    <div class="col-md-6">
-                      <label for="taskCategory" class="form-label fw-semibold" style="color: #2c6a5d;">Task Category</label>
-                      <select class="form-select rounded-3 border-0" id="taskCategory" style="background: rgba(113, 201, 101, 0.1);">
-                      <option>Planting</option>
-                      <option>Irrigation</option>
-                      <option>Fertilizing</option>
-                      <option>Harvesting</option>
-                      <option>Maintenance</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                    <div class="col-12">
-                      <label for="taskDesc" class="form-label fw-semibold" style="color: #2c6a5d;">Task Description</label>
-                      <textarea class="form-control rounded-3 border-0" id="taskDesc" rows="3" placeholder="Details about the activity" style="background: rgba(113, 201, 101, 0.1);"></textarea>
+                      <label for="taskTitle" class="form-label fw-semibold mb-2" style="color: #2c6a5d;">Task Title</label>
+                      <input type="text" class="form-control form-control-modern rounded-3 border-0 py-3" id="taskTitle" placeholder="e.g., 'Irrigate Field A'" style="background: rgba(113, 201, 101, 0.1); box-shadow: 0 2px 8px rgba(113, 201, 101, 0.2);">
                     </div>
                     <div class="col-md-6">
-                      <label for="priorityLevel" class="form-label fw-semibold" style="color: #2c6a5d;">Priority Level</label>
-                      <select class="form-select rounded-3 border-0" id="priorityLevel" style="background: rgba(113, 201, 101, 0.1);">
-                      <option>Low</option>
-                      <option>Medium</option>
-                      <option>High</option>
-                    </select>
-                  </div>
+                      <label for="taskCategory" class="form-label fw-semibold mb-2" style="color: #2c6a5d;">Task Category</label>
+                      <select class="form-select form-control-modern rounded-3 border-0 py-3" id="taskCategory" style="background: rgba(113, 201, 101, 0.1); box-shadow: 0 2px 8px rgba(113, 201, 101, 0.2);">
+                        <option>Planting</option>
+                        <option>Irrigation</option>
+                        <option>Fertilizing</option>
+                        <option>Harvesting</option>
+                        <option>Maintenance</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label for="taskDesc" class="form-label fw-semibold mb-2" style="color: #2c6a5d;">Task Description</label>
+                      <textarea class="form-control form-control-modern rounded-3 border-0 py-3" id="taskDesc" rows="3" placeholder="Details about the activity" style="background: rgba(113, 201, 101, 0.1); box-shadow: 0 2px 8px rgba(113, 201, 101, 0.2);"></textarea>
+                    </div>
                     <div class="col-md-6">
-                      <label for="taskStatus" class="form-label fw-semibold" style="color: #2c6a5d;">Task Status</label>
-                      <select class="form-select rounded-3 border-0" id="taskStatus" style="background: rgba(113, 201, 101, 0.1);">
+                      <label for="priorityLevel" class="form-label fw-semibold mb-2" style="color: #2c6a5d;">Priority Level</label>
+                      <select class="form-select form-control-modern rounded-3 border-0 py-3" id="priorityLevel" style="background: rgba(113, 201, 101, 0.1); box-shadow: 0 2px 8px rgba(113, 201, 101, 0.2);">
+                        <option>Low</option>
+                        <option>Medium</option>
+                        <option>High</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="taskStatus" class="form-label fw-semibold mb-2" style="color: #2c6a5d;">Task Status</label>
+                      <select class="form-select form-control-modern rounded-3 border-0 py-3" id="taskStatus" style="background: rgba(113, 201, 101, 0.1); box-shadow: 0 2px 8px rgba(113, 201, 101, 0.2);">
                         <option>Pending</option>
                         <option>In Progress</option>
                         <option>Completed</option>
@@ -233,53 +232,59 @@
                     </div>
                   </div>
                   
-                  <hr class="my-4" style="border-color: rgba(113, 201, 101, 0.2);">
+                  <div class="my-4" style="height: 2px; background: linear-gradient(90deg, rgba(113, 201, 101, 0.3), rgba(44, 106, 93, 0.3)); border-radius: 1px;"></div>
                   
-                  <h6 class="fw-bold mb-3" style="color: #2c6a5d;">Scheduling</h6>
-                  <div class="row g-3">
+                  <h6 class="fw-bold mb-3 d-flex align-items-center gap-2" style="color: #2c6a5d;">
+                    <i class="bi bi-calendar-event"></i>
+                    Scheduling
+                  </h6>
+                  <div class="row g-4">
                     <div class="col-md-6">
-                      <label for="startDateTime" class="form-label fw-semibold" style="color: #2c6a5d;">Start Date & Time</label>
-                      <input type="datetime-local" class="form-control rounded-3 border-0" id="startDateTime" style="background: rgba(113, 201, 101, 0.1);">
-                  </div>
+                      <label for="startDateTime" class="form-label fw-semibold mb-2" style="color: #2c6a5d;">Start Date & Time</label>
+                      <input type="datetime-local" class="form-control form-control-modern rounded-3 border-0 py-3" id="startDateTime" style="background: rgba(0, 123, 255, 0.1); box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);">
+                    </div>
                     <div class="col-md-6">
-                      <label for="dueDateTime" class="form-label fw-semibold" style="color: #2c6a5d;">Due Date & Time</label>
-                      <input type="datetime-local" class="form-control rounded-3 border-0" id="dueDateTime" style="background: rgba(113, 201, 101, 0.1);">
-                  </div>
+                      <label for="dueDateTime" class="form-label fw-semibold mb-2" style="color: #2c6a5d;">Due Date & Time</label>
+                      <input type="datetime-local" class="form-control form-control-modern rounded-3 border-0 py-3" id="dueDateTime" style="background: rgba(0, 123, 255, 0.1); box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);">
+                    </div>
                     <div class="col-md-6">
-                      <label for="estDuration" class="form-label fw-semibold" style="color: #2c6a5d;">Estimated Duration</label>
-                    <div class="input-group">
-                        <input type="number" class="form-control rounded-3 border-0" id="estDuration" placeholder="Duration" style="background: rgba(113, 201, 101, 0.1);">
-                        <select class="form-select rounded-3 border-0" style="max-width:120px; background: rgba(113, 201, 101, 0.1);">
-                        <option>Hours</option>
-                        <option>Days</option>
+                      <label for="estDuration" class="form-label fw-semibold mb-2" style="color: #2c6a5d;">Estimated Duration</label>
+                      <div class="input-group">
+                        <input type="number" class="form-control form-control-modern rounded-3 border-0 py-3" id="estDuration" placeholder="Duration" style="background: rgba(0, 123, 255, 0.1); box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);">
+                        <select class="form-select form-control-modern rounded-3 border-0 py-3" style="max-width:120px; background: rgba(0, 123, 255, 0.1); box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);">
+                          <option>Hours</option>
+                          <option>Days</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="recurrence" class="form-label fw-semibold mb-2" style="color: #2c6a5d;">Recurrence</label>
+                      <select class="form-select form-control-modern rounded-3 border-0 py-3" id="recurrence" style="background: rgba(0, 123, 255, 0.1); box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);">
+                        <option>None</option>
+                        <option>Daily</option>
+                        <option>Weekly</option>
+                        <option>Monthly</option>
                       </select>
                     </div>
                   </div>
-                    <div class="col-md-6">
-                      <label for="recurrence" class="form-label fw-semibold" style="color: #2c6a5d;">Recurrence</label>
-                      <select class="form-select rounded-3 border-0" id="recurrence" style="background: rgba(113, 201, 101, 0.1);">
-                      <option>None</option>
-                      <option>Daily</option>
-                      <option>Weekly</option>
-                      <option>Monthly</option>
-                    </select>
-                  </div>
-                  </div>
                   
-                  <hr class="my-4" style="border-color: rgba(113, 201, 101, 0.2);">
+                  <div class="my-4" style="height: 2px; background: linear-gradient(90deg, rgba(113, 201, 101, 0.3), rgba(44, 106, 93, 0.3)); border-radius: 1px;"></div>
                   
-                  <h6 class="fw-bold mb-3" style="color: #2c6a5d;">Progress Tracking</h6>
+                  <h6 class="fw-bold mb-3 d-flex align-items-center gap-2" style="color: #2c6a5d;">
+                    <i class="bi bi-clipboard-check"></i>
+                    Progress Tracking
+                  </h6>
                   <div class="mb-3">
-                    <label for="progressNotes" class="form-label fw-semibold" style="color: #2c6a5d;">Progress Notes/Updates</label>
-                    <textarea class="form-control rounded-3 border-0" id="progressNotes" rows="3" placeholder="Notes or updates" style="background: rgba(113, 201, 101, 0.1);"></textarea>
+                    <label for="progressNotes" class="form-label fw-semibold mb-2" style="color: #2c6a5d;">Progress Notes/Updates</label>
+                    <textarea class="form-control form-control-modern rounded-3 border-0 py-3" id="progressNotes" rows="3" placeholder="Notes or updates" style="background: rgba(255, 193, 7, 0.1); box-shadow: 0 2px 8px rgba(255, 193, 7, 0.2);"></textarea>
                   </div>
                   
                   <div class="d-flex gap-3 mt-4">
-                    <button type="submit" class="btn flex-grow-1 py-3 rounded-4 fw-semibold shadow-sm" style="background: linear-gradient(135deg, #71c965, #2c6a5d); color: white; border: none;">
+                    <button type="submit" class="btn btn-gradient flex-grow-1 py-3 rounded-4 fw-semibold shadow-lg" style="transition: all 0.3s ease;">
                       <i class="bi bi-check-circle me-2"></i>
                       Save Task
                     </button>
-                    <button type="button" class="btn py-3 rounded-4 fw-semibold shadow-sm" data-bs-dismiss="modal" style="background: rgba(255, 255, 255, 0.9); color: #2c6a5d; border: 1px solid rgba(44, 106, 93, 0.2);">
+                    <button type="button" class="btn py-3 px-4 rounded-4 fw-semibold shadow-sm" data-bs-dismiss="modal" style="background: rgba(255, 255, 255, 0.9); color: #2c6a5d; border: 1px solid rgba(44, 106, 93, 0.2); transition: all 0.3s ease;">
                       Cancel
                     </button>
                   </div>
@@ -290,9 +295,9 @@
         </div>
         
         <!-- Task View Modal -->
-        <div class="modal fade" id="viewTaskModal" tabindex="-1" aria-labelledby="viewTaskLabel" aria-hidden="true">
+        <div class="modal fade modal-modern" id="viewTaskModal" tabindex="-1" aria-labelledby="viewTaskLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
-            <div class="modal-content border-0 rounded-4 shadow-lg" style="background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px);">
+            <div class="modal-content border-0 rounded-4 shadow-lg">
               <div class="modal-header border-0 p-4">
                 <h5 class="modal-title fw-bold d-flex align-items-center gap-2" id="viewTaskLabel" style="color: #2c6a5d;">
                   <i class="bi bi-eye"></i>
@@ -340,7 +345,7 @@
                   </div>
                 </div>
                 <div class="d-flex gap-3 mt-4">
-                  <button type="button" class="btn flex-grow-1 py-3 rounded-4 fw-semibold shadow-sm" onclick="editCurrentTask()" style="background: linear-gradient(135deg, #ffc107, #fd7e14); color: white; border: none;">
+                  <button type="button" class="btn flex-grow-1 py-3 rounded-4 fw-semibold shadow-sm" data-bs-toggle="modal" data-bs-target="#addField" data-bs-dismiss="modal" style="background: linear-gradient(135deg, #ffc107, #fd7e14); color: white; border: none;">
                     <i class="bi bi-pencil me-2"></i>
                     Edit Task
                   </button>
@@ -356,391 +361,8 @@
     </div>
   </div>
 
-        <style>
-    /* Enhanced Sidebar Styles */
-    .sidebar-modern {
-      background: linear-gradient(180deg, rgba(0, 18, 32, 0.95) 0%, rgba(44, 106, 93, 0.9) 100%);
-      backdrop-filter: blur(20px);
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
-    }
 
-    .sidebar-container {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .sidebar-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(113, 201, 101, 0.1) 0%, rgba(44, 106, 93, 0.1) 50%, rgba(0, 18, 32, 0.1) 100%);
-      pointer-events: none;
-    }
-
-    /* Logo Section */
-    .sidebar-logo-section {
-      padding: 2rem 1.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      position: relative;
-      z-index: 2;
-    }
-
-    .logo-container {
-      position: relative;
-      display: inline-block;
-    }
-
-    .logo-image {
-      width: 45px;
-      height: 45px;
-      object-fit: contain;
-      filter: drop-shadow(0 0 10px rgba(113, 201, 101, 0.5));
-      transition: all 0.3s ease;
-    }
-
-    .logo-glow {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60px;
-      height: 60px;
-      background: radial-gradient(circle, rgba(113, 201, 101, 0.3) 0%, transparent 70%);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    .brand-text {
-      font-size: 1.5rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #71c965, #ffffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* Navigation Sections */
-    .sidebar-nav {
-      padding: 1.5rem 1rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .nav-section {
-      margin-bottom: 2rem;
-    }
-
-    .nav-section-title {
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      margin-bottom: 1rem;
-      padding-left: 0.5rem;
-    }
-
-    /* Sidebar Links */
-    .sidebar-link {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.875rem 1rem;
-      color: rgba(255, 255, 255, 0.8);
-      text-decoration: none;
-      border-radius: 12px;
-      margin-bottom: 0.25rem;
-      position: relative;
-      transition: all 0.3s ease;
-      overflow: hidden;
-    }
-
-    .sidebar-link::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-      transition: left 0.5s ease;
-    }
-
-    .sidebar-link:hover::before {
-      left: 100%;
-    }
-
-    .sidebar-link:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      transform: translateX(8px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .sidebar-link.active {
-      background: linear-gradient(135deg, rgba(113, 201, 101, 0.2), rgba(44, 106, 93, 0.2));
-      color: white;
-      box-shadow: 0 4px 15px rgba(113, 201, 101, 0.3);
-    }
-
-    .link-icon {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .sidebar-link:hover .link-icon {
-      background: linear-gradient(135deg, #71c965, #2c6a5d);
-      transform: scale(1.1);
-    }
-
-    .sidebar-link.active .link-icon {
-      background: linear-gradient(135deg, #71c965, #2c6a5d);
-      box-shadow: 0 0 15px rgba(113, 201, 101, 0.5);
-    }
-
-    .link-text {
-      font-weight: 500;
-      font-size: 0.95rem;
-      flex-grow: 1;
-    }
-
-    .link-indicator {
-      width: 4px;
-      height: 20px;
-      background: linear-gradient(135deg, #71c965, #2c6a5d);
-      border-radius: 2px;
-      opacity: 0;
-      transition: all 0.3s ease;
-    }
-
-    .sidebar-link.active .link-indicator {
-      opacity: 1;
-      transform: scaleY(1.2);
-    }
-
-    /* User Section */
-    .sidebar-user-section {
-      padding: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      position: relative;
-      z-index: 2;
-    }
-
-    .user-profile {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      transition: all 0.3s ease;
-    }
-
-    .user-profile:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-2px);
-    }
-
-    .user-avatar {
-      position: relative;
-    }
-
-    .avatar-image {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid rgba(113, 201, 101, 0.5);
-    }
-
-    .status-indicator {
-      position: absolute;
-      bottom: 2px;
-      right: 2px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      border: 2px solid rgba(0, 18, 32, 0.95);
-    }
-
-    .status-indicator.online {
-      background: #28a745;
-      box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
-    }
-
-    .user-info {
-      flex-grow: 1;
-    }
-
-    .user-name {
-      color: white;
-            font-weight: 600;
-      margin: 0;
-      font-size: 0.95rem;
-    }
-
-    .user-role {
-      color: rgba(255, 255, 255, 0.7);
-      margin: 0;
-      font-size: 0.8rem;
-    }
-
-    /* Logout Section */
-    .sidebar-logout-section {
-      padding: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      position: relative;
-      z-index: 2;
-      margin-top: auto;
-    }
-
-    .logout-link {
-      background: rgba(220, 53, 69, 0.1);
-      border: 1px solid rgba(220, 53, 69, 0.2);
-    }
-
-    .logout-link:hover {
-      background: rgba(220, 53, 69, 0.2);
-      border-color: rgba(220, 53, 69, 0.4);
-    }
-
-    /* Animations */
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 0.5;
-        transform: translate(-50%, -50%) scale(1);
-      }
-      50% {
-        opacity: 0.8;
-        transform: translate(-50%, -50%) scale(1.1);
-      }
-    }
-
-    /* Card and Button Styles */
-    .card {
-      transition: all 0.3s ease;
-    }
-    
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
-    }
-    
-    .btn {
-      transition: all 0.3s ease;
-    }
-    
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
-    }
-
-    /* Table Styles */
-    .table {
-      border-collapse: separate;
-      border-spacing: 0;
-    }
-
-    .table tbody tr {
-      transition: all 0.3s ease;
-    }
-
-    .table tbody tr:hover {
-      background: rgba(113, 201, 101, 0.05) !important;
-      transform: scale(1.01);
-    }
-
-    /* Form Styles */
-    .form-control:focus, .form-select:focus {
-      box-shadow: 0 0 0 0.2rem rgba(113, 201, 101, 0.25);
-      border-color: #71c965;
-          }
-        </style>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <script>
-    // Search functionality
-    document.getElementById('taskSearch').addEventListener('input', function() {
-      const searchTerm = this.value.toLowerCase();
-      const table = document.getElementById('taskTable');
-      const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
-      let visibleCount = 0;
-      
-      for (let row of rows) {
-        const title = row.cells[0].textContent.toLowerCase();
-        const category = row.cells[1].textContent.toLowerCase();
-        const priority = row.cells[2].textContent.toLowerCase();
-        const status = row.cells[3].textContent.toLowerCase();
-        
-        if (title.includes(searchTerm) || category.includes(searchTerm) || priority.includes(searchTerm) || status.includes(searchTerm)) {
-          row.style.display = '';
-          visibleCount++;
-        } else {
-          row.style.display = 'none';
-        }
-      }
-      
-      document.getElementById('taskCount').textContent = visibleCount;
-    });
-    
-    // View task modal functionality
-    function viewTask(title, description, category, priority, startTime, dueTime, status, progress) {
-      document.getElementById('viewTaskTitle').textContent = title;
-      document.getElementById('viewTaskDescription').textContent = description;
-      document.getElementById('viewTaskStart').textContent = startTime;
-      document.getElementById('viewTaskDue').textContent = dueTime;
-      document.getElementById('viewTaskProgress').textContent = progress;
-      
-      // Set category badge
-      const categoryElement = document.getElementById('viewTaskCategory');
-      categoryElement.innerHTML = `<span class="badge rounded-pill px-3 py-2" style="background: linear-gradient(135deg, #17a2b8, #138496); color: white;">${category}</span>`;
-      
-      // Set priority badge
-      const priorityElement = document.getElementById('viewTaskPriority');
-      let priorityColor = 'linear-gradient(135deg, #28a745, #1e7e34)'; // Medium default
-      if (priority === 'High') {
-        priorityColor = 'linear-gradient(135deg, #dc3545, #c82333)';
-      } else if (priority === 'Low') {
-        priorityColor = 'linear-gradient(135deg, #6c757d, #545b62)';
-      }
-      priorityElement.innerHTML = `<span class="badge rounded-pill px-3 py-2" style="background: ${priorityColor}; color: white;">${priority}</span>`;
-      
-      // Set status badge
-      const statusElement = document.getElementById('viewTaskStatus');
-      let statusColor = 'linear-gradient(135deg, #ffc107, #fd7e14)'; // Pending default
-      if (status === 'In Progress') {
-        statusColor = 'linear-gradient(135deg, #007bff, #0056b3)';
-      } else if (status === 'Completed') {
-        statusColor = 'linear-gradient(135deg, #28a745, #1e7e34)';
-      }
-      statusElement.innerHTML = `<span class="badge rounded-pill px-3 py-2" style="background: ${statusColor}; color: white;">${status}</span>`;
-      
-      // Show the modal
-      const modal = new bootstrap.Modal(document.getElementById('viewTaskModal'));
-      modal.show();
-    }
-    
-    // Edit current task function
-    function editCurrentTask() {
-      // Close view modal
-      const viewModal = bootstrap.Modal.getInstance(document.getElementById('viewTaskModal'));
-      viewModal.hide();
-      
-      // Open edit modal (you can enhance this to populate the edit form)
-      const editModal = new bootstrap.Modal(document.getElementById('addField'));
-      editModal.show();
-    }
-  </script>
 </body>
 </html>
