@@ -809,11 +809,16 @@ body {
   backdrop-filter: blur(20px);
   transition: all 0.3s ease;
   cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .team-image {
   height: 200px;
+  width: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.3s ease;
 }
 
@@ -825,6 +830,10 @@ body {
 
 .team-card-body {
   background: linear-gradient(135deg, rgba(113, 201, 101, 0.1), rgba(44, 106, 93, 0.1));
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .team-name {
