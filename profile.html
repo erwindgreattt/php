@@ -8,6 +8,19 @@
   <link rel="icon" type="image/png" href="images/sprout.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .password-toggle-btn:hover .password-toggle-icon {
+      color: #2c6a5d !important;
+    }
+    
+    .password-toggle-icon {
+      transition: color 0.2s ease;
+    }
+    
+    .password-input:focus ~ .password-toggle-btn .password-toggle-icon {
+      color: #2c6a5d !important;
+    }
+  </style>
 </head>
 
   <body>
@@ -104,7 +117,7 @@
             <div class="card border-0 rounded-4 shadow-lg h-100" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(20px); border: 1px solid rgba(113, 201, 101, 0.3);">
               <div class="card-body p-4 text-center">
                 <div class="position-relative d-inline-block mb-4">
-                  <img src="images/farmer.jpg" alt="User" class="rounded-circle border shadow-lg" style="width: 120px; height: 120px; object-fit: cover;">
+                  <img src="images/justin.jpg" alt="User" class="rounded-circle border shadow-lg" style="width: 120px; height: 120px; object-fit: cover;">
                   <div class="position-absolute bottom-0 end-0 bg-success rounded-circle border border-white" style="width: 30px; height: 30px;"></div>
                   <button class="btn btn-sm position-absolute top-0 end-0 bg-white rounded-circle shadow-sm" style="width: 35px; height: 35px; border: none;">
                     <i class="bi bi-camera text-dark"></i>
@@ -112,22 +125,22 @@
                 </div>
                 
                 <h4 class="fw-bold mb-2 text-white">
-                  John Farmer 
+                  Justin Nabunturan 
                   <i class="bi bi-patch-check-fill text-success ms-2"></i>
                 </h4>
-                <span class="badge rounded-pill px-3 py-2 mb-3" style="background: linear-gradient(135deg, #28a745, #1e7e34); color: white;">Farm Manager</span>
+                <span class="badge rounded-pill px-3 py-2 mb-3" style="background: linear-gradient(135deg, #28a745, #1e7e34); color: white;">Aura Farmer</span>
                 
                 <div class="row g-3 text-start">
                   <div class="col-12">
                     <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
                       <small class="text-white-50 d-block mb-1">Email</small>
-                      <span class="fw-semibold text-white">john.farmer@email.com</span>
+                      <span class="fw-semibold text-white">justinnabunturan@email.com</span>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
                       <small class="text-white-50 d-block mb-1">Username</small>
-                      <span class="fw-semibold text-white">johnfarmer</span>
+                      <span class="fw-semibold text-white">justin</span>
                     </div>
                   </div>
                   <div class="col-12">
@@ -155,19 +168,19 @@
                   <div class="col-md-6">
                     <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
                       <small class="text-white-50 d-block mb-1">First Name</small>
-                      <span class="fw-semibold text-white">John</span>
+                      <span class="fw-semibold text-white">Justin</span>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
                       <small class="text-white-50 d-block mb-1">Last Name</small>
-                      <span class="fw-semibold text-white">Farmer</span>
+                      <span class="fw-semibold text-white">Nabunturan</span>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
                       <small class="text-white-50 d-block mb-1">Role</small>
-                      <span class="fw-semibold text-white">Farm Manager</span>
+                      <span class="fw-semibold text-white">Aura Farmer</span>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -203,32 +216,37 @@
                     <div class="row g-3">
                       <div class="col-md-6">
                         <label for="firstName" class="form-label fw-semibold text-white">First Name</label>
-                        <input type="text" class="form-control rounded-3 border-0" id="firstName" placeholder="Enter first name" value="John" style="background: rgba(255, 255, 255, 0.9); color: #333;">
+                        <input type="text" class="form-control rounded-3 border-0" id="firstName" placeholder="Enter first name" value="Justin"background: rgba(255, 255, 255, 0.9); color: #333;">
                       </div>
                       <div class="col-md-6">
                         <label for="lastName" class="form-label fw-semibold text-white">Last Name</label>
-                        <input type="text" class="form-control rounded-3 border-0" id="lastName" placeholder="Enter last name" value="Farmer" style="background: rgba(255, 255, 255, 0.9); color: #333;">
+                        <input type="text" class="form-control rounded-3 border-0" id="lastName" placeholder="Enter last name" value="Nabunturan" style="background: rgba(255, 255, 255, 0.9); color: #333;">
                       </div>
                       <div class="col-md-6">
                         <label for="role" class="form-label fw-semibold text-white">Role</label>
                         <select class="form-select rounded-3 border-0" id="role" style="background: rgba(255, 255, 255, 0.9); color: #333;">
                           <option>Admin</option>
-                          <option selected>Farm Manager</option>
+                          <option selected>Aura Farmer</option>
                           <option>Worker</option>
                           <option>Farmer</option>
                         </select>
                       </div>
                       <div class="col-md-6">
                         <label for="email" class="form-label fw-semibold text-white">Email</label>
-                        <input type="email" class="form-control rounded-3 border-0" id="email" placeholder="Enter email address" value="john.farmer@email.com" style="background: rgba(255, 255, 255, 0.9); color: #333;">
+                        <input type="email" class="form-control rounded-3 border-0" id="email" placeholder="Enter email address" value="justinnabunturan@email.com" style="background: rgba(255, 255, 255, 0.9); color: #333;">
                       </div>
                       <div class="col-md-6">
                         <label for="username" class="form-label fw-semibold text-white">Username</label>
-                        <input type="text" class="form-control rounded-3 border-0" id="username" placeholder="Enter username" value="johnfarmer" style="background: rgba(255, 255, 255, 0.9); color: #333;">
+                        <input type="text" class="form-control rounded-3 border-0" id="username" placeholder="Enter username" value="justinnabunturan" style="background: rgba(255, 255, 255, 0.9); color: #333;">
                       </div>
                       <div class="col-md-6">
                         <label for="password" class="form-label fw-semibold text-white">Password</label>
-                        <input type="password" class="form-control rounded-3 border-0" id="password" placeholder="Enter password" value="password123" style="background: rgba(255, 255, 255, 0.9); color: #333;">
+                        <div class="position-relative">
+                          <input type="password" class="form-control rounded-3 border-0 password-input" id="password" placeholder="Enter password" value="password123" style="background: rgba(255, 255, 255, 0.9); color: #333; padding-right: 50px;">
+                          <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y me-2 password-toggle-btn" style="z-index: 10; color: #6c757d; text-decoration: none; padding: 0.375rem; cursor: pointer;" onclick="togglePasswordVisibility('password', 'passwordToggle')">
+                            <i class="bi bi-eye password-toggle-icon" id="passwordToggle"></i>
+                          </button>
+                        </div>
                       </div>
                     </div>
                     
@@ -254,5 +272,21 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function togglePasswordVisibility(inputId, iconId) {
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('bi-eye');
+        icon.classList.add('bi-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.remove('bi-eye-slash');
+        icon.classList.add('bi-eye');
+      }
+    }
+  </script>
 </body>
 </html>

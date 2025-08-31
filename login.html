@@ -6,19 +6,26 @@
   <title>Login - Grainity</title>
   <link rel="icon" type="image/png" href="images/sprout.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body style="background: linear-gradient(135deg, #71c965 0%, #2c6a5d 25%, #001220 50%, #70c367 75%, #71c965 100%); min-height: 100vh;">
+<body>
   <div class="min-vh-100 d-flex align-items-center justify-content-center p-3">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6 col-xl-5">
           <div class="card shadow-lg border-0 rounded-4 position-relative overflow-hidden" style="backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.45); border: 1px solid rgba(113, 201, 101, 0.3);">
-            <!-- Blob Background -->
+            <!-- Enhanced Blob Background -->
             <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 0;">
               <!-- Top-left green blob -->
-              <div class="position-absolute" style="top: -15%; left: -10%; width: 50%; height: 50%; background: #71c965; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; transform: rotate(-10deg); opacity: 0.2;"></div>
+              <div class="position-absolute" style="top: -20%; left: -15%; width: 60%; height: 60%; background: linear-gradient(135deg, #71c965, #2c6a5d); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; transform: rotate(-15deg); opacity: 0.4; filter: blur(1px);"></div>
               <!-- Bottom-right green blob -->
-              <div class="position-absolute" style="bottom: -20%; right: -15%; width: 55%; height: 55%; background: #70c367; border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%; transform: rotate(15deg); opacity: 0.2;"></div>
+              <div class="position-absolute" style="bottom: -25%; right: -20%; width: 65%; height: 65%; background: linear-gradient(135deg, #70c367, #71c965); border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%; transform: rotate(20deg); opacity: 0.35; filter: blur(1px);"></div>
+              <!-- Center accent blob -->
+              <div class="position-absolute" style="top: 30%; right: 10%; width: 25%; height: 25%; background: linear-gradient(135deg, #2c6a5d, #70c367); border-radius: 50%; opacity: 0.3; filter: blur(0.5px);"></div>
+              <!-- Floating small blobs -->
+              <div class="position-absolute" style="top: 15%; left: 5%; width: 15%; height: 15%; background: #71c965; border-radius: 50%; opacity: 0.25; animation: float 6s ease-in-out infinite;"></div>
+              <div class="position-absolute" style="bottom: 10%; left: 20%; width: 12%; height: 12%; background: #70c367; border-radius: 50%; opacity: 0.2; animation: float 8s ease-in-out infinite reverse;"></div>
             </div>
             <div class="card-body p-4 p-md-5 position-relative" style="z-index: 1;">
               <div class="text-center mb-4">
@@ -33,10 +40,13 @@
                    <label for="loginEmail" style="color: #2c6a5d;">Email address</label>
                  </div>
                  
-                 <div class="form-floating mb-4">
-                   <input type="password" class="form-control border-0 bg-light" id="loginPassword" placeholder="Password" style="border-radius: 12px;">
-                   <label for="loginPassword" style="color: #2c6a5d;">Password</label>
-                 </div>
+                                   <div class="form-floating mb-4 position-relative">
+                    <input type="password" class="form-control border-0 bg-light password-input" id="loginPassword" placeholder="Password" style="border-radius: 12px; padding-right: 50px;">
+                    <label for="loginPassword" style="color: #2c6a5d;">Password</label>
+                                         <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y me-2 password-toggle-btn" style="z-index: 10; color: #6c757d; text-decoration: none; padding: 0.375rem; cursor: pointer;" onclick="togglePasswordVisibility('loginPassword', 'loginPasswordToggle')">
+                       <i class="bi bi-eye password-toggle-icon" id="loginPasswordToggle"></i>
+                     </button>
+                  </div>
                  
                  <a href="dashboard.html" class="btn btn-success w-100 py-3 fw-semibold" style="border-radius: 12px; background: linear-gradient(135deg, #28a745, #20c997); border: none; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);">
                    Sign In
@@ -58,5 +68,21 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function togglePasswordVisibility(inputId, iconId) {
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('bi-eye');
+        icon.classList.add('bi-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.remove('bi-eye-slash');
+        icon.classList.add('bi-eye');
+      }
+    }
+  </script>
 </body>
 </html>
