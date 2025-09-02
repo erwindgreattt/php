@@ -4,6 +4,98 @@ body {
   min-height: 100vh;
 }
 
+/* Sidebar Toggle Styles */
+.sidebar-modern {
+  transition: all 0.3s ease;
+  transform: translateX(0);
+}
+
+.sidebar-modern.sidebar-closed {
+  transform: translateX(-100%);
+  width: 0 !important;
+  overflow: hidden;
+}
+
+.sidebar-toggle-btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-toggle-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.sidebar-toggle-btn:hover::before {
+  left: 100%;
+}
+
+.sidebar-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.main-content {
+  transition: all 0.3s ease;
+}
+
+/* Sidebar Open/Close Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.sidebar-modern.sidebar-open {
+  animation: slideIn 0.3s ease-out;
+}
+
+.sidebar-modern.sidebar-closed {
+  animation: slideOut 0.3s ease-out;
+}
+
+/* Responsive Sidebar Toggle */
+@media (max-width: 991.98px) {
+  .sidebar-modern {
+    position: fixed;
+    left: -100%;
+    transition: left 0.3s ease;
+  }
+  
+  .sidebar-modern.show {
+    left: 0;
+  }
+  
+  .main-content {
+    margin-left: 0 !important;
+  }
+}
+
 /* Authentication Pages Styles */
 .password-toggle-btn:hover .password-toggle-icon {
   color: #2c6a5d !important;
