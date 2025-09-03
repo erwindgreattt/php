@@ -392,9 +392,19 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&h=800&q=80') center/cover;
+  background: url('../image/tao.jpg') center/cover;
   opacity: 0.3;
   z-index: 1;
+}
+
+/* Signup page specific background */
+.signup-page .login-left::before {
+  background: url('../image/terraces.jpg') center/cover;
+}
+
+/* Forgot password page specific background */
+.forgot-page .login-left::before {
+  background: url('../image/mill.jpg') center/cover;
 }
 
 .login-left-content {
