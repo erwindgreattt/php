@@ -18,42 +18,41 @@
 
     <!-- Sidebar -->
     <div class="collapse show d-md-block" id="sidebarCollapse">
-      <div class="dashboard-sidebar">
-        <div class="sidebar-header">
-          <div class="d-flex align-items-center mb-4">
-            <i class="bi bi-leaf display-6 me-2"></i>
-            <span class="fw-bold fs-4">Grainity</span>
-          </div>
+      <div class="dashboard-sidebar slim">
+        <div class="sidebar-header text-center py-3">
+          <a href="dashboard.html" class="nav-link p-0" data-bs-toggle="tooltip" data-bs-placement="right" title="Grainity">
+            <i class="bi bi-leaf fs-4 text-success"></i>
+          </a>
         </div>
         
         <nav class="sidebar-nav">
-          <ul class="nav flex-column gap-2">
+          <ul class="nav flex-column align-items-center">
             <li class="nav-item">
-              <a class="nav-link" href="dashboard.html">
-                <i class="bi bi-speedometer2 me-2"></i>Dashboard
+              <a class="nav-link" href="dashboard.html" data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboard">
+                <i class="bi bi-speedometer2"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="farmtask.html">
-                <i class="bi bi-calendar2-check me-2"></i>Farm Tasks
+              <a class="nav-link active" href="farmtask.html" data-bs-toggle="tooltip" data-bs-placement="right" title="Farm Tasks">
+                <i class="bi bi-calendar2-check"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="profile.html">
-                <i class="bi bi-person me-2"></i>Profile
+              <a class="nav-link" href="profile.html" data-bs-toggle="tooltip" data-bs-placement="right" title="Profile">
+                <i class="bi bi-person"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="settings.html">
-                <i class="bi bi-gear me-2"></i>Settings
+              <a class="nav-link" href="settings.html" data-bs-toggle="tooltip" data-bs-placement="right" title="Settings">
+                <i class="bi bi-gear"></i>
               </a>
             </li>
           </ul>
         </nav>
         
-        <div class="sidebar-footer">
-          <a class="nav-link logout-link" href="#" id="logoutBtn">
-            <i class="bi bi-box-arrow-right me-2"></i>Logout
+        <div class="sidebar-footer text-center mt-auto pb-3">
+          <a class="nav-link logout-link" href="#" id="logoutBtn" data-bs-toggle="tooltip" data-bs-placement="right" title="Logout">
+            <i class="bi bi-box-arrow-right"></i>
           </a>
         </div>
       </div>
@@ -69,9 +68,8 @@
               <p class="dashboard-subtitle">Manage and organize your farm activities efficiently</p>
             </div>
             <div class="col-auto">
-              <button class="btn btn-primary btn-add-task" type="button" data-bs-toggle="modal" data-bs-target="#addTaskModal">
-                <i class="bi bi-plus-circle"></i>
-                Add Task
+              <button class="btn btn-outline-success me-2 btn-add-task" type="button" data-bs-toggle="modal" data-bs-target="#addTaskModal">
+                <i class="bi bi-plus-circle me-2"></i>Add Task
               </button>
             </div>
           </div>
@@ -374,6 +372,10 @@
   <script>
     // Farm Task page functionality
     document.addEventListener('DOMContentLoaded', function() {
+      // Enable tooltips for slim sidebar
+      const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      tooltipTriggerList.forEach(function (el) { new bootstrap.Tooltip(el, { delay: { show: 200, hide: 50 } }); });
+
       // Check if user is logged in
       if (localStorage.getItem('isLoggedIn') !== 'true') {
         window.location.href = 'login.html';

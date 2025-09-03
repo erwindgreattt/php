@@ -1282,10 +1282,90 @@ body {
   padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10;
   backdrop-filter: blur(20px);
   border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Slim, icon-only variant */
+.dashboard-sidebar.slim {
+  width: 80px;
+  min-width: 80px;
+  background: linear-gradient(180deg, #0f9f6e 0%, #0b8e60 45%, #087f56 100%);
+  color: #ffffff;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.75rem 0.5rem;
+  box-shadow: 0 0 24px rgba(0, 64, 48, 0.25);
+  position: sticky;
+  top: 0;
+}
+
+.dashboard-sidebar.slim .sidebar-header {
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-sidebar.slim .sidebar-nav .nav-link {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 0.75rem;
+  padding: 0;
+  margin: 0.25rem 0;
+  background: transparent;
+  position: relative;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.12s ease, padding 0.12s ease;
+}
+
+.dashboard-sidebar.slim .sidebar-nav .nav-link i { font-size: 1.2rem; }
+
+.dashboard-sidebar.slim .sidebar-nav .nav-link:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.dashboard-sidebar.slim .sidebar-nav .nav-link.active {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+  padding-left: 8px; /* create space between left accent line and icon */
+}
+
+.dashboard-sidebar.slim .sidebar-nav .nav-link.active::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  width: 3px;
+  height: 22px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #d1fae5, #34d399);
+}
+
+.dashboard-sidebar.slim .sidebar-nav .nav-link:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px rgba(16,185,129,0.45);
+}
+
+.dashboard-sidebar.slim .logout-link {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.8) !important;
+  border-radius: 0.75rem;
+  padding: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dashboard-sidebar.slim .logout-link:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff !important;
 }
 
 .sidebar-header {
