@@ -50,8 +50,7 @@
                 <p class="dashboard-subtitle">View and manage your account, preferences and recent activity.</p>
               </div>
               <div class="col-auto">
-                <button class="btn btn-outline-secondary me-2" data-bs-toggle="modal" data-bs-target="#editProfileModal"><i class="bi bi-pencil-square me-1"></i>Edit</button>
-                <button class="btn btn-primary" id="btnMessage"><i class="bi bi-envelope-paper me-1"></i>Message</button>
+                
               </div>
             </div>
           </div>
@@ -59,72 +58,77 @@
 
         <div class="dashboard-content">
           <div class="container-fluid">
-            <div class="row g-4">
-              <!-- Left: Profile banner & overview -->
-              <div class="col-lg-4">
-                <div class="card dashboard-card">
-                  <div class="position-relative">
-                    <div class="img-fluid w-100" style="height:140px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-top-left-radius: .75rem; border-top-right-radius: .75rem;" alt="banner"></div>
-                    <div class="position-absolute" style="bottom:-16px; left:1rem;">
-                      <div class="d-flex align-items-center">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle border border-white" style="width:96px; height:96px; object-fit:cover;" alt="avatar">
-                        <div class="ms-3">
-                          <h5 class="mb-0">John Doe</h5>
-                          <small class="text-muted">Farmer</small>
+            <div class="dashboard-card task-list-card" style="margin-top: -8px;">
+              <div class="card-body">
+                <div class="row g-4">
+                  <!-- Left: Profile banner & overview -->
+                  <div class="col-lg-4">
+                    <div class="card dashboard-card">
+                      <div class="position-relative">
+                        <div class="img-fluid w-100" style="height:140px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-top-left-radius: .75rem; border-top-right-radius: .75rem;" alt="banner"></div>
+                        <div class="position-absolute" style="bottom:-16px; left:1rem;">
+                          <div class="d-flex align-items-center">
+                            <div style="position:relative; display:inline-block;">
+                              <img src="image/kamil.jpg" class="rounded-circle border border-white" style="width:96px; height:96px; object-fit:cover;" alt="avatar">
+                              <button class="btn btn-success btn-sm rounded-circle" data-bs-toggle="modal" data-bs-target="#changePhotoModal" title="Change photo" style="position:absolute; right:-6px; bottom:-6px; width:32px; height:32px; display:flex; align-items:center; justify-content:center; padding:0;">
+                                <i class="bi bi-camera"></i>
+                              </button>
+                            </div>
+                            <div class="ms-3">
+                              <h5 class="mb-0">John Doe</h5>
+                              <small class="text-muted">Farmer</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body mt-4 pt-4">
+                        <div class="d-flex justify-content-between mb-3">
+                          <div>
+                            <h6 class="mb-0">Member Since</h6>
+                            <small class="text-muted">March 2023</small>
+                          </div>
+                          <div class="text-end">
+                            <h6 class="mb-0">Tasks</h6>
+                            <small class="text-muted">128</small>
+                          </div>
+                        </div>
+
+                        <hr>
+
+                        <h6 class="mb-2">Contact</h6>
+                        <p class="mb-1"><i class="bi bi-envelope me-2"></i> john.doe@email.com</p>
+                        <p class="mb-1"><i class="bi bi-telephone me-2"></i> +1 234 567 890</p>
+                        <p class="mb-0"><i class="bi bi-geo-alt me-2"></i> Farmville, CA</p>
+
+                        <div class="d-grid gap-2 mt-4">
+                          
                         </div>
                       </div>
                     </div>
+
+                    <!-- Quick Actions removed -->
                   </div>
-                  <div class="card-body mt-4 pt-4">
-                    <div class="d-flex justify-content-between mb-3">
-                      <div>
-                        <h6 class="mb-0">Member Since</h6>
-                        <small class="text-muted">March 2023</small>
-                      </div>
-                      <div class="text-end">
-                        <h6 class="mb-0">Tasks</h6>
-                        <small class="text-muted">128</small>
+
+                  <!-- Right: Activity & Edit Form -->
+                  <div class="col-lg-8">
+                    <!-- About and Recent Activity removed as requested -->
+
+                    <div class="card dashboard-card">
+                      <div class="card-body">
+                        <h5 class="card-title">Public Profile</h5>
+                        <form id="publicProfileForm">
+                          <div class="mb-3">
+                            <label class="form-label">Display name</label>
+                            <input class="form-control" value="John Doe" disabled>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">Bio</label>
+                            <textarea class="form-control" rows="4" disabled>Experienced farmer focusing on sustainable grain production.</textarea>
+                          </div>
+                          <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#editProfileModal"><i class="bi bi-pencil-square me-1"></i>Edit Profile</button>
+                        </form>
                       </div>
                     </div>
-
-                    <hr>
-
-                    <h6 class="mb-2">Contact</h6>
-                    <p class="mb-1"><i class="bi bi-envelope me-2"></i> john.doe@email.com</p>
-                    <p class="mb-1"><i class="bi bi-telephone me-2"></i> +1 234 567 890</p>
-                    <p class="mb-0"><i class="bi bi-geo-alt me-2"></i> Farmville, CA</p>
-
-                    <div class="d-grid gap-2 mt-4">
-                      <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#changePhotoModal"><i class="bi bi-camera me-1"></i>Change Photo</button>
-                      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editProfileModal"><i class="bi bi-pencil-square me-1"></i>Edit Profile</button>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Quick Actions removed -->
-              </div>
-
-              <!-- Right: Activity & Edit Form -->
-              <div class="col-lg-8">
-                <!-- About and Recent Activity removed as requested -->
-
-                <div class="card dashboard-card">
-                  <div class="card-body">
-                    <h5 class="card-title">Public Profile</h5>
-                    <form>
-                      <div class="mb-3">
-                        <label class="form-label">Display name</label>
-                        <input class="form-control" value="John Doe">
-                      </div>
-                      <div class="mb-3">
-                        <label class="form-label">Bio</label>
-                        <textarea class="form-control" rows="4">Experienced farmer focusing on sustainable grain production.</textarea>
-                      </div>
-                      <div class="d-flex gap-2">
-                        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="modal" data-bs-target="#editProfileModal">Advanced Edit</button>
-                        <button class="btn btn-primary" type="submit">Save</button>
-                      </div>
-                    </form>
                   </div>
                 </div>
               </div>
@@ -207,6 +211,8 @@
           window.location.href = 'login.html';
           return;
         }
+
+        // Inline editing removed; using modal popup for edits now.
 
         // Logout functionality
         const logoutBtn = document.getElementById('logoutBtn');

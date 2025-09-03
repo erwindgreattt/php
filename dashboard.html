@@ -72,7 +72,7 @@
                 <button class="btn btn-outline-success me-2">
                   <i class="bi bi-plus-circle me-2"></i>Add Task
                 </button>
-                <button class="btn btn-outline-primary">
+                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#notificationsModal">
                   <i class="bi bi-bell me-2"></i>Notifications
                 </button>
               </div>
@@ -174,6 +174,61 @@
     </div>
   </div>
 
+  <!-- Notifications Modal -->
+  <div class="modal fade" id="notificationsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="bi bi-bell me-2"></i>Notifications</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-tabs" id="notifTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab">All</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="tasks-tab" data-bs-toggle="tab" data-bs-target="#tasks" type="button" role="tab">Tasks</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="weather-tab" data-bs-toggle="tab" data-bs-target="#weather" type="button" role="tab">Weather</button>
+            </li>
+          </ul>
+          <div class="tab-content pt-3">
+            <div class="tab-pane fade show active" id="all" role="tabpanel">
+              <div class="list-group" id="notifAll">
+                <div class="list-group-item d-flex align-items-start justify-content-between">
+                  <div>
+                    <div class="fw-semibold"><i class="bi bi-check2-circle text-success me-2"></i>Task “Water corn field” marked as completed</div>
+                    <small class="text-muted">Just now</small>
+                  </div>
+                  <button class="btn btn-sm btn-outline-secondary">Mark read</button>
+                </div>
+                <div class="list-group-item d-flex align-items-start justify-content-between">
+                  <div>
+                    <div class="fw-semibold"><i class="bi bi-cloud-rain text-primary me-2"></i>Rain expected this evening</div>
+                    <small class="text-muted">1h ago</small>
+                  </div>
+                  <button class="btn btn-sm btn-outline-secondary">Mark read</button>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tasks" role="tabpanel">
+              <div class="list-group" id="notifTasks"></div>
+            </div>
+            <div class="tab-pane fade" id="weather" role="tabpanel">
+              <div class="list-group" id="notifWeather"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+          <button id="clearAllNotifs" class="btn btn-primary"><i class="bi bi-x-circle me-1"></i>Clear all</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     // Dashboard functionality
@@ -222,6 +277,26 @@
           const emailName = userEmail.split('@')[0];
           welcomeTitle.textContent = `Welcome back, ${emailName}!`;
         }
+      }
+
+      // Notifications demo data & actions
+      const notifAll = document.getElementById('notifAll');
+      const notifTasks = document.getElementById('notifTasks');
+      const notifWeather = document.getElementById('notifWeather');
+      const clearBtn = document.getElementById('clearAllNotifs');
+      if (notifAll && notifTasks && notifWeather && clearBtn) {
+        // Seed Tasks/Weather from All
+        const cloneTo = (selector, container) => {
+          [...notifAll.children].forEach(item => {
+            if (item.querySelector(selector)) container.appendChild(item.cloneNode(true));
+          });
+        };
+        cloneTo('.bi-check2-circle', notifTasks);
+        cloneTo('.bi-cloud-rain', notifWeather);
+
+        clearBtn.addEventListener('click', function(){
+          [notifAll, notifTasks, notifWeather].forEach(el => el.innerHTML = '<div class="text-center text-muted py-4">No notifications</div>');
+        });
       }
     });
   </script>

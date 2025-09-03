@@ -81,8 +81,7 @@
             <!-- Security Settings -->
             <div class="col-lg-6">
               <div class="minimal-card">
-                <div class="card-header-minimal" role="button" data-bs-toggle="collapse"
-                  data-bs-target="#passwordCollapse" aria-expanded="false" aria-controls="passwordCollapse">
+                <div class="card-header-minimal">
                   <div class="d-flex align-items-center">
                     <div class="icon-circle">
                       <i class="bi bi-shield-lock"></i>
@@ -93,44 +92,42 @@
                     </div>
                   </div>
                 </div>
-                <div id="passwordCollapse" class="collapse">
-                  <div class="card-body-minimal">
-                    <div class="password-form-minimal">
-                      <div class="form-group-minimal">
-                        <label class="form-label-minimal">Current Password</label>
-                        <div class="input-group-minimal">
-                          <input type="password" class="form-control-minimal" placeholder="Enter current password">
-                          <button class="password-toggle-minimal" type="button">
-                            <i class="bi bi-eye"></i>
-                          </button>
-                        </div>
+                <div class="card-body-minimal">
+                  <div class="password-form-minimal">
+                    <div class="form-group-minimal">
+                      <label class="form-label-minimal">Current Password</label>
+                      <div class="input-group-minimal">
+                        <input type="password" class="form-control-minimal" placeholder="Enter current password">
+                        <button class="password-toggle-minimal" type="button">
+                          <i class="bi bi-eye"></i>
+                        </button>
                       </div>
-
-                      <div class="form-group-minimal">
-                        <label class="form-label-minimal">New Password</label>
-                        <div class="input-group-minimal">
-                          <input type="password" class="form-control-minimal" placeholder="Enter new password">
-                          <button class="password-toggle-minimal" type="button">
-                            <i class="bi bi-eye"></i>
-                          </button>
-                        </div>
-                      </div>
-
-                      <div class="form-group-minimal">
-                        <label class="form-label-minimal">Confirm Password</label>
-                        <div class="input-group-minimal">
-                          <input type="password" class="form-control-minimal" placeholder="Confirm new password">
-                          <button class="password-toggle-minimal" type="button">
-                            <i class="bi bi-eye"></i>
-                          </button>
-                        </div>
-                      </div>
-
-                      <button class="btn-update-minimal">
-                        <i class="bi bi-check"></i>
-                        Update Password
-                      </button>
                     </div>
+
+                    <div class="form-group-minimal">
+                      <label class="form-label-minimal">New Password</label>
+                      <div class="input-group-minimal">
+                        <input type="password" class="form-control-minimal" placeholder="Enter new password">
+                        <button class="password-toggle-minimal" type="button">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="form-group-minimal full">
+                      <label class="form-label-minimal">Confirm Password</label>
+                      <div class="input-group-minimal">
+                        <input type="password" class="form-control-minimal" placeholder="Confirm new password">
+                        <button class="password-toggle-minimal" type="button">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                    <button class="btn-update-minimal">
+                      <i class="bi bi-check"></i>
+                      Update Password
+                    </button>
                   </div>
                 </div>
               </div>
@@ -139,8 +136,7 @@
             <!-- Preferences -->
             <div class="col-lg-6">
               <div class="minimal-card">
-                <div class="card-header-minimal" role="button" data-bs-toggle="collapse"
-                  data-bs-target="#preferencesCollapse" aria-expanded="false" aria-controls="preferencesCollapse">
+                <div class="card-header-minimal">
                   <div class="d-flex align-items-center">
                     <div class="icon-circle">
                       <i class="bi bi-gear"></i>
@@ -151,44 +147,42 @@
                     </div>
                   </div>
                 </div>
-                <div id="preferencesCollapse" class="collapse">
-                  <div class="card-body-minimal">
-                    <div class="setting-item-minimal">
-                      <div class="setting-content">
-                        <h6 class="setting-label-minimal">Email Notifications</h6>
-                        <p class="setting-desc-minimal">Receive updates via email</p>
-                      </div>
-                      <div class="setting-toggle">
-                        <div class="toggle-switch">
-                          <input type="checkbox" id="emailNotifications" checked>
-                          <label for="emailNotifications"></label>
-                        </div>
+                <div class="card-body-minimal">
+                  <div class="setting-item-minimal">
+                    <div class="setting-content">
+                      <h6 class="setting-label-minimal">Email Notifications</h6>
+                      <p class="setting-desc-minimal">Receive updates via email</p>
+                    </div>
+                    <div class="setting-toggle">
+                      <div class="toggle-switch">
+                        <input type="checkbox" id="emailNotifications" checked>
+                        <label for="emailNotifications"></label>
                       </div>
                     </div>
+                  </div>
 
-                    <div class="setting-item-minimal">
-                      <div class="setting-content">
-                        <h6 class="setting-label-minimal">Task Reminders</h6>
-                        <p class="setting-desc-minimal">Get reminded about tasks</p>
-                      </div>
-                      <div class="setting-toggle">
-                        <div class="toggle-switch">
-                          <input type="checkbox" id="taskReminders" checked>
-                          <label for="taskReminders"></label>
-                        </div>
+                  <div class="setting-item-minimal">
+                    <div class="setting-content">
+                      <h6 class="setting-label-minimal">Task Reminders</h6>
+                      <p class="setting-desc-minimal">Get reminded about tasks</p>
+                    </div>
+                    <div class="setting-toggle">
+                      <div class="toggle-switch">
+                        <input type="checkbox" id="taskReminders" checked>
+                        <label for="taskReminders"></label>
                       </div>
                     </div>
+                  </div>
 
-                    <div class="setting-item-minimal">
-                      <div class="setting-content">
-                        <h6 class="setting-label-minimal">Weather Alerts</h6>
-                        <p class="setting-desc-minimal">Weather updates & recommendations</p>
-                      </div>
-                      <div class="setting-toggle">
-                        <div class="toggle-switch">
-                          <input type="checkbox" id="weatherAlerts">
-                          <label for="weatherAlerts"></label>
-                        </div>
+                  <div class="setting-item-minimal">
+                    <div class="setting-content">
+                      <h6 class="setting-label-minimal">Weather Alerts</h6>
+                      <p class="setting-desc-minimal">Weather updates & recommendations</p>
+                    </div>
+                    <div class="setting-toggle">
+                      <div class="toggle-switch">
+                        <input type="checkbox" id="weatherAlerts">
+                        <label for="weatherAlerts"></label>
                       </div>
                     </div>
                   </div>
@@ -342,8 +336,8 @@
 
     /* Password Form Styles */
     .password-form-minimal {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr;
       gap: 16px;
     }
 
@@ -351,6 +345,10 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+    }
+
+    .form-group-minimal.full {
+      grid-column: 1 / -1; /* Span across both columns */
     }
 
     .form-label-minimal {
@@ -457,6 +455,11 @@
         margin-left: 0;
         align-self: flex-end;
       }
+    }
+
+    @media (min-width: 992px) {
+      .password-form-minimal { grid-template-columns: repeat(2, 1fr); }
+      .password-form-minimal .full { grid-column: 1 / -1; }
     }
   </style>
   <script>
