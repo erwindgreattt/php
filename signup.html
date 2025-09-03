@@ -3,111 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sign Up - Grainity</title>
-  <link rel="icon" type="image/png" href="images/sprout.png">
+  <title>Grainity - Sign Up</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="min-vh-100 d-flex align-items-center p-0">
-     <!-- Left Side - Floating Image -->
-     <div class="col-md-6 d-none d-md-block p-0 position-relative d-flex align-items-center justify-content-center">
-       <img src="images/field.png" alt="Farm Field" style="width: 100%; height: auto; max-width: 700px;">
-     </div>
-     
-     <!-- Right Side - Signup Card -->
-     <div class="col-md-6 d-flex align-items-center justify-content-center p-4">
-       <div class="w-100" style="max-width: 400px;">
-         <div class="card shadow-lg border-0 rounded-4 position-relative overflow-hidden" style="backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.45); border: 1px solid rgba(113, 201, 101, 0.3);">
-           <!-- Enhanced Blob Background - Dynamic Wave Style -->
-           <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 0;">
-             <!-- Top wave blob -->
-             <div class="position-absolute" style="top: -35%; left: -25%; width: 75%; height: 65%; background: linear-gradient(135deg, #71c965, #2c6a5d); border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%; transform: rotate(-8deg); opacity: 0.4; filter: blur(1px); animation: wave 8s ease-in-out infinite;"></div>
-             <!-- Bottom wave blob -->
-             <div class="position-absolute" style="bottom: -30%; right: -30%; width: 80%; height: 70%; background: linear-gradient(135deg, #70c367, #71c965); border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%; transform: rotate(12deg); opacity: 0.35; filter: blur(1px); animation: wave 10s ease-in-out infinite reverse;"></div>
-             <!-- Enhanced center accent -->
-             <div class="position-absolute" style="top: 35%; left: 65%; width: 30%; height: 30%; background: linear-gradient(135deg, #2c6a5d, #70c367); border-radius: 50%; opacity: 0.3; filter: blur(0.5px); animation: pulse 5s ease-in-out infinite;"></div>
-             <!-- Floating elements -->
-             <div class="position-absolute" style="top: 15%; right: 10%; width: 20%; height: 20%; background: #71c965; border-radius: 50%; opacity: 0.25; animation: float 6s ease-in-out infinite;"></div>
-             <div class="position-absolute" style="bottom: 20%; left: 15%; width: 18%; height: 18%; background: #70c367; border-radius: 50%; opacity: 0.2; animation: float 9s ease-in-out infinite reverse;"></div>
-             <!-- Organic wave shapes -->
-             <div class="position-absolute" style="top: 60%; left: 5%; width: 15%; height: 25%; background: linear-gradient(45deg, #2c6a5d, #71c965); border-radius: 50% 50% 50% 50% / 40% 60% 40% 60%; opacity: 0.15; transform: rotate(-30deg);"></div>
-           </div>
-           <div class="card-body p-4 p-md-5 position-relative" style="z-index: 1;">
-             <div class="text-center mb-4">
-               <img src="images/sprout.png" alt="Grainity Logo" class="mb-3 shadow-sm" style="width: 80px; height: 80px; object-fit: contain;">
-               <h3 class="fw-bold text-white mb-2">Create Account</h3>
-               <p class="text-white text-opacity-75 small">Join Grainity to streamline your farm management</p>
-             </div>
-             
-             <form>
-               <div class="row g-3">
-                 <div class="col-md-6">
-                   <div class="form-floating">
-                     <input type="text" class="form-control border-0 bg-light" id="signupFirstName" placeholder="First Name" style="border-radius: 12px;">
-                     <label for="signupFirstName" style="color: #2c6a5d;">First Name</label>
-                   </div>
-                 </div>
-                 <div class="col-md-6">
-                   <div class="form-floating">
-                     <input type="text" class="form-control border-0 bg-light" id="signupLastName" placeholder="Last Name" style="border-radius: 12px;">
-                     <label for="signupLastName" style="color: #2c6a5d;">Last Name</label>
-                   </div>
-                 </div>
-               </div>
-               
-               <div class="form-floating mt-3">
-                 <input type="email" class="form-control border-0 bg-light" id="signupEmail" placeholder="name@example.com" style="border-radius: 12px;">
-                 <label for="signupEmail" style="color: #2c6a5d;">Email address</label>
-               </div>
-               
-                               <div class="form-floating mt-3 position-relative">
-                  <input type="password" class="form-control border-0 bg-light" id="signupPassword" placeholder="Password" style="border-radius: 12px; padding-right: 50px;">
-                  <label for="signupPassword" style="color: #2c6a5d;">Password</label>
-                  <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y me-2" style="z-index: 10; color: #6c757d; text-decoration: none; padding: 0.375rem; cursor: pointer; background: transparent; border: none;" onclick="togglePasswordVisibility('signupPassword', 'signupPasswordToggle')">
-                    <i class="bi bi-eye" id="signupPasswordToggle"></i>
-                  </button>
+  <div class="login-container">
+    <!-- Back to Home Button -->
+    <div class="back-home">
+      <a href="index.html" class="back-btn">
+        <i class="bi bi-arrow-left me-2"></i>Back to Home
+      </a>
+    </div>
+
+    <div class="row g-0 h-100">
+      <!-- Left Side - Image & Content -->
+      <div class="col-lg-6 login-left d-flex align-items-center justify-content-center">
+        <div class="login-left-content">
+          <h1 class="login-left-title">Join Grainity</h1>
+          <p class="login-left-subtitle">
+            Start your journey towards smarter, more sustainable farming. Create your account and unlock the power of intelligent agriculture.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Side - Signup Form -->
+      <div class="col-lg-6 d-flex align-items-center justify-content-center">
+        <div class="signup-card">
+          <!-- Header -->
+          <div class="login-header">
+            <div class="login-logo">
+              <i class="bi bi-leaf"></i>
+            </div>
+            <h2 class="login-title">Create Account</h2>
+            <p class="login-subtitle">Join the future of farming</p>
+          </div>
+
+          <!-- Signup Form -->
+          <form action="login.html" method="get">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input 
+                    type="text" 
+                    class="form-control" 
+                    id="firstName" 
+                    placeholder="First name" 
+                  >
                 </div>
-                
-                <div class="form-floating mt-3 position-relative">
-                  <input type="password" class="form-control border-0 bg-light" id="signupConfirm" placeholder="Confirm Password" style="border-radius: 12px; padding-right: 50px;">
-                  <label for="signupConfirm" style="color: #2c6a5d;">Confirm Password</label>
-                  <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y me-2" style="z-index: 10; color: #6c757d; text-decoration: none; padding: 0.375rem; cursor: pointer; background: transparent; border: none;" onclick="togglePasswordVisibility('signupConfirm', 'signupConfirmToggle')">
-                    <i class="bi bi-eye" id="signupConfirmToggle"></i>
-                  </button>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input 
+                    type="text" 
+                    class="form-control" 
+                    id="lastName" 
+                    placeholder="Last name" 
+                  >
                 </div>
-               
-               <button type="submit" class="btn btn-success w-100 mt-4 py-3 fw-semibold" style="border-radius: 12px; background: linear-gradient(135deg, #28a745, #20c997); border: none; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);">
-                 Create Account
-               </button>
-             </form>
-             
-             <div class="text-center mt-4">
-               <span class="text-white text-opacity-75 small">Already have an account?</span>
-               <a href="login.html" class="text-white text-decoration-none fw-semibold ms-1">Sign In</a>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input 
+                type="email" 
+                class="form-control" 
+                id="email" 
+                placeholder="Enter your email address" 
+              >
+            </div>
+            
+            <div class="form-group">
+              <label for="password" class="form-label">Password</label>
+              <div class="input-group">
+                <input 
+                  type="password" 
+                  class="form-control" 
+                  id="password" 
+                  placeholder="Create a password" 
+                >
+                <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <div class="input-group">
+                <input 
+                  type="password" 
+                  class="form-control" 
+                  id="confirmPassword" 
+                  placeholder="Confirm your password" 
+                >
+                <button class="btn btn-outline-secondary" type="button" id="toggleConfirmPassword">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-login">
+              <i class="bi bi-person-plus me-2"></i>Create Account
+            </button>
+          </form>
+
+          <!-- Sign In Section -->
+          <div class="signup-section">
+            <p class="signup-text">Already have an account?</p>
+            <a href="login.html" class="signup-link">
+              Sign in to your account
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    function togglePasswordVisibility(inputId, iconId) {
-      const input = document.getElementById(inputId);
-      const icon = document.getElementById(iconId);
-      
-      if (input.type === 'password') {
-        input.type = 'text';
-        icon.classList.remove('bi-eye');
-        icon.classList.add('bi-eye-slash');
-      } else {
-        input.type = 'password';
-        icon.classList.remove('bi-eye-slash');
-        icon.classList.add('bi-eye');
-      }
-    }
-  </script>
 </body>
 </html>

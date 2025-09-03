@@ -3,90 +3,322 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login - Grainity</title>
-  <link rel="icon" type="image/png" href="images/sprout.png">
+  <title>Grainity - Login</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="min-vh-100 d-flex align-items-center p-0">
-         <!-- Left Side - Floating Image -->
-     <div class="col-md-6 d-none d-md-block p-0 position-relative d-flex align-items-center justify-content-center">
-       <img src="images/trees.png" alt="Farm Trees" style="width: 100%; height: auto; max-width: 700px;">
-     </div>
-    
-    <!-- Right Side - Login Card -->
-    <div class="col-md-6 d-flex align-items-center justify-content-center p-4">
-      <div class="w-100" style="max-width: 400px;">
-        <div class="card shadow-lg border-0 rounded-4 position-relative overflow-hidden" style="backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.45); border: 1px solid rgba(113, 201, 101, 0.3);">
-          <!-- Enhanced Blob Background -->
-          <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 0;">
-            <!-- Top-left green blob -->
-            <div class="position-absolute" style="top: -20%; left: -15%; width: 60%; height: 60%; background: linear-gradient(135deg, #71c965, #2c6a5d); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; transform: rotate(-15deg); opacity: 0.4; filter: blur(1px);"></div>
-            <!-- Bottom-right green blob -->
-            <div class="position-absolute" style="bottom: -25%; right: -20%; width: 65%; height: 65%; background: linear-gradient(135deg, #70c367, #71c965); border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%; transform: rotate(20deg); opacity: 0.35; filter: blur(1px);"></div>
-            <!-- Center accent blob -->
-            <div class="position-absolute" style="top: 30%; right: 10%; width: 25%; height: 25%; background: linear-gradient(135deg, #2c6a5d, #70c367); border-radius: 50%; opacity: 0.3; filter: blur(0.5px);"></div>
-            <!-- Floating small blobs -->
-            <div class="position-absolute" style="top: 15%; left: 5%; width: 15%; height: 15%; background: #71c965; border-radius: 50%; opacity: 0.25; animation: float 6s ease-in-out infinite;"></div>
-            <div class="position-absolute" style="bottom: 10%; left: 20%; width: 12%; height: 12%; background: #70c367; border-radius: 50%; opacity: 0.2; animation: float 8s ease-in-out infinite reverse;"></div>
+  <div class="login-container">
+    <!-- Back to Home Button -->
+    <div class="back-home">
+      <a href="index.html" class="back-btn">
+        <i class="bi bi-arrow-left me-2"></i>Back to Home
+      </a>
+    </div>
+
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        <!-- Left Side - Branding -->
+        <div class="col-lg-6 login-left d-flex align-items-center justify-content-center">
+          <div class="login-left-content">
+            <h1 class="login-left-title fade-in">Welcome Back</h1>
+            <p class="login-left-subtitle fade-in">
+              Access your farm management dashboard and continue optimizing your agricultural operations with intelligent insights and smart scheduling.
+            </p>
           </div>
-          <div class="card-body p-4 p-md-5 position-relative" style="z-index: 1;">
-            <div class="text-center mb-4">
-              <img src="images/sprout.png" alt="Grainity Logo" class="mb-3 shadow-sm" style="width: 80px; height: 80px; object-fit: contain;">
-              <h3 class="fw-bold text-white mb-2">Welcome Back</h3>
-              <p class="text-white text-opacity-75 small">Sign in to continue your farming journey</p>
+        </div>
+
+        <!-- Right Side - Login Form -->
+        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+          <div class="login-form-container fade-in">
+            <div class="login-header">
+              <div class="login-logo">
+                <i class="bi bi-leaf"></i>
+              </div>
+              <h2 class="login-title">Sign In</h2>
+              <p class="login-subtitle">Enter your credentials to access your account</p>
             </div>
-            
-            <form>
-              <div class="form-floating mb-3">
-                <input type="email" class="form-control border-0 bg-light" id="loginEmail" placeholder="name@example.com" style="border-radius: 12px;">
-                <label for="loginEmail" style="color: #2c6a5d;">Email address</label>
+
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
               </div>
-              
-              <div class="form-floating mb-4 position-relative">
-                <input type="password" class="form-control border-0 bg-light password-input" id="loginPassword" placeholder="Password" style="border-radius: 12px; padding-right: 50px;">
-                <label for="loginPassword" style="color: #2c6a5d;">Password</label>
-                <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y me-2 password-toggle-btn" style="z-index: 10; color: #6c757d; text-decoration: none; padding: 0.375rem; cursor: pointer;" onclick="togglePasswordVisibility('loginPassword', 'loginPasswordToggle')">
-                  <i class="bi bi-eye password-toggle-icon" id="loginPasswordToggle"></i>
-                </button>
+
+              <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+                  <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                    <i class="bi bi-eye" id="togglePasswordIcon"></i>
+                  </button>
+                </div>
               </div>
-              
-              <a href="dashboard.html" class="btn btn-success w-100 py-3 fw-semibold" style="border-radius: 12px; background: linear-gradient(135deg, #28a745, #20c997); border: none; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);">
-                Sign In
-              </a>
+
+              <div class="form-options">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="rememberMe" name="rememberMe">
+                  <label class="form-check-label" for="rememberMe">
+                    Remember me
+                  </label>
+                </div>
+                <a href="forgot.html" class="forgot-link">Forgot Password?</a>
+              </div>
+
+              <button type="submit" class="btn btn-login w-100">
+                <i class="bi bi-box-arrow-in-right me-2"></i>Sign In
+              </button>
             </form>
-            
-            <div class="text-center mt-4">
-              <a href="forgot.html" class="text-white text-decoration-none fw-semibold">Forgot password?</a>
-            </div>
-            
-            <div class="text-center mt-4">
-              <span class="text-white text-opacity-75 small">Don't have an account?</span>
-              <a href="signup.html" class="text-white text-decoration-none fw-semibold ms-1">Create Account</a>
+
+            <div class="signup-section">
+              <p class="signup-text">Don't have an account?</p>
+              <a href="signup.html" class="signup-link">Create Account</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    function togglePasswordVisibility(inputId, iconId) {
-      const input = document.getElementById(inputId);
-      const icon = document.getElementById(iconId);
-      
-      if (input.type === 'password') {
-        input.type = 'text';
-        icon.classList.remove('bi-eye');
-        icon.classList.add('bi-eye-slash');
-      } else {
-        input.type = 'password';
-        icon.classList.remove('bi-eye-slash');
-        icon.classList.add('bi-eye');
+    // Enhanced form validation and login functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('loginForm');
+      const togglePassword = document.getElementById('togglePassword');
+      const passwordInput = document.getElementById('password');
+      const togglePasswordIcon = document.getElementById('togglePasswordIcon');
+      const emailInput = document.getElementById('email');
+
+      // Check if form is found
+      if (!form) {
+        console.error('Login form not found!');
+        return;
       }
-    }
+
+      // Enhanced password toggle functionality
+      if (togglePassword && passwordInput && togglePasswordIcon) {
+        togglePassword.addEventListener('click', function() {
+          const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+          passwordInput.setAttribute('type', type);
+          
+          // Toggle icon with smooth transition
+          if (type === 'text') {
+            togglePasswordIcon.classList.remove('bi-eye');
+            togglePasswordIcon.classList.add('bi-eye-slash');
+            togglePassword.setAttribute('aria-label', 'Hide password');
+          } else {
+            togglePasswordIcon.classList.remove('bi-eye-slash');
+            togglePasswordIcon.classList.add('bi-eye');
+            togglePassword.setAttribute('aria-label', 'Show password');
+          }
+        });
+      }
+
+
+
+      // Enhanced form submission with better error handling
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Get form data
+        const formData = new FormData(form);
+        const email = formData.get('email').trim();
+        const password = formData.get('password');
+        const rememberMe = formData.get('rememberMe');
+
+        // Basic validation - just check if fields are not empty
+        if (!email || !password) {
+          alert('Please enter both email and password');
+          return;
+        }
+
+        // Show loading state
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Signing In...';
+        submitBtn.disabled = true;
+
+        // Add loading class to form
+        form.classList.add('loading');
+
+        // Simulate login process with better error handling
+        setTimeout(() => {
+          // Simulate potential login failure (20% chance for demo)
+          const loginSuccess = Math.random() > 0.2;
+
+          if (loginSuccess) {
+            // Clear login attempts on successful login
+            clearLoginAttempts();
+            
+            // Store login state
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('loginTime', new Date().toISOString());
+            
+            if (rememberMe) {
+              localStorage.setItem('rememberMe', 'true');
+            }
+
+            // Show success message briefly
+            submitBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Success!';
+            submitBtn.classList.remove('btn-login');
+            submitBtn.classList.add('btn-success');
+
+            // Redirect to dashboard
+            setTimeout(() => {
+              window.location.href = 'dashboard.html';
+            }, 1000);
+          } else {
+            // Record failed login attempt
+            if (!recordLoginAttempt()) {
+              return; // Rate limit exceeded
+            }
+            
+            // Show error message
+            submitBtn.innerHTML = '<i class="bi bi-exclamation-triangle me-2"></i>Login Failed';
+            submitBtn.classList.remove('btn-login');
+            submitBtn.classList.add('btn-danger');
+
+            // Show error message
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'alert alert-danger mt-3';
+            errorDiv.innerHTML = '<i class="bi bi-exclamation-triangle me-2"></i>Invalid email or password. Please try again.';
+            form.appendChild(errorDiv);
+
+            // Reset button after delay
+            setTimeout(() => {
+              submitBtn.innerHTML = originalText;
+              submitBtn.disabled = false;
+              submitBtn.classList.remove('btn-danger');
+              submitBtn.classList.add('btn-login');
+              form.classList.remove('loading');
+              errorDiv.remove();
+            }, 3000);
+          }
+        }, 1500);
+      });
+
+      // Fade in animation
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Check if user is already logged in
+      if (localStorage.getItem('isLoggedIn') === 'true') {
+        // Check if login is still valid (24 hours)
+        const loginTime = localStorage.getItem('loginTime');
+        if (loginTime) {
+          const loginDate = new Date(loginTime);
+          const now = new Date();
+          const hoursDiff = (now - loginDate) / (1000 * 60 * 60);
+          
+          if (hoursDiff < 24) {
+            window.location.href = 'dashboard.html';
+          } else {
+            // Clear expired login
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('loginTime');
+          }
+        }
+      }
+
+      // Auto-focus email field
+      if (emailInput) {
+        emailInput.focus();
+      }
+
+      // Basic rate limiting
+      let loginAttempts = 0;
+      const maxAttempts = 5;
+      const lockoutTime = 5 * 60 * 1000; // 5 minutes
+
+      function checkRateLimit() {
+        const lastAttempt = localStorage.getItem('lastLoginAttempt');
+        const attemptCount = parseInt(localStorage.getItem('loginAttempts') || '0');
+        
+        if (lastAttempt) {
+          const timeSinceLastAttempt = Date.now() - parseInt(lastAttempt);
+          if (timeSinceLastAttempt < lockoutTime && attemptCount >= maxAttempts) {
+            const remainingTime = Math.ceil((lockoutTime - timeSinceLastAttempt) / 1000 / 60);
+            showRateLimitError(remainingTime);
+            return false;
+          } else if (timeSinceLastAttempt >= lockoutTime) {
+            // Reset attempts after lockout period
+            localStorage.removeItem('loginAttempts');
+            localStorage.removeItem('lastLoginAttempt');
+          }
+        }
+        return true;
+      }
+
+      function showRateLimitError(minutes) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'alert alert-warning mt-3';
+        errorDiv.innerHTML = `<i class="bi bi-shield-exclamation me-2"></i>Too many login attempts. Please try again in ${minutes} minute(s).`;
+        form.appendChild(errorDiv);
+        
+        // Disable form
+        form.querySelectorAll('input, button').forEach(el => {
+          el.disabled = true;
+        });
+        
+        // Remove error after lockout period
+        setTimeout(() => {
+          errorDiv.remove();
+          form.querySelectorAll('input, button').forEach(el => {
+            el.disabled = false;
+          });
+        }, lockoutTime);
+      }
+
+      function recordLoginAttempt() {
+        const attemptCount = parseInt(localStorage.getItem('loginAttempts') || '0') + 1;
+        localStorage.setItem('loginAttempts', attemptCount.toString());
+        localStorage.setItem('lastLoginAttempt', Date.now().toString());
+        
+        if (attemptCount >= maxAttempts) {
+          showRateLimitError(5);
+          return false;
+        }
+        return true;
+      }
+
+      function clearLoginAttempts() {
+        localStorage.removeItem('loginAttempts');
+        localStorage.removeItem('lastLoginAttempt');
+      }
+
+      // Check rate limit on page load
+      if (!checkRateLimit()) {
+        return;
+      }
+
+      // Enhanced form submission with rate limiting
+      const originalSubmitHandler = form.onsubmit;
+      form.addEventListener('submit', function(event) {
+        if (!checkRateLimit()) {
+          event.preventDefault();
+          return;
+        }
+      });
+    });
   </script>
 </body>
 </html>

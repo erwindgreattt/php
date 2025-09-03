@@ -1,224 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Settings - Grainity</title>
+  <title>Grainity - Settings</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/sprout.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
 </head>
 
-  <body>
-  <div class="container-fluid min-vh-100">
-    <div class="row h-100">
-      <!-- Enhanced Modern Sidebar -->
-      <nav class="col-lg-2 d-none d-lg-block p-0 h-100 position-fixed sidebar-modern sidebar-closed" style="z-index: 1000;">
-        <div class="d-flex flex-column h-100 sidebar-container">
-          <!-- Enhanced Logo Section -->
-          <div class="sidebar-logo-section">
-            <a class="navbar-brand fw-bold d-flex align-items-center gap-3 text-white m-0" href="index.html">
-              <div class="logo-container">
-                <img src="images/sprout.png" alt="Logo" class="logo-image">
-                <div class="logo-glow"></div>
-              </div>
-              <span class="brand-text">Grainity</span>
-            </a>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar Toggle Button -->
+    <button class="btn btn-outline-success d-md-none m-2 position-fixed sidebar-toggle" type="button"
+      data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" aria-expanded="false" aria-controls="sidebarCollapse">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <div class="collapse show d-md-block" id="sidebarCollapse">
+      <div class="dashboard-sidebar">
+        <div class="sidebar-header">
+          <div class="d-flex align-items-center mb-4">
+            <i class="bi bi-leaf display-6 me-2"></i>
+            <span class="fw-bold fs-4">Grainity</span>
           </div>
-          
-          <!-- Enhanced Navigation Menu -->
-          <div class="flex-grow-1 sidebar-nav">
-            <div class="nav-section">
-              <h6 class="nav-section-title">MAIN MENU</h6>
-              <ul class="nav flex-column gap-1">
-                <li class="nav-item">
-                  <a class="nav-link sidebar-link" href="dashboard.html">
-                    <div class="link-icon">
-                      <i class="bi bi-grid-1x2"></i>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul class="nav flex-column gap-2">
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">
+                <i class="bi bi-speedometer2 me-2"></i>Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="farmtask.html">
+                <i class="bi bi-calendar2-check me-2"></i>Farm Tasks
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">
+                <i class="bi bi-person me-2"></i>Profile
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="settings.html">
+                <i class="bi bi-gear me-2"></i>Settings
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+          <a class="nav-link logout-link" href="#" id="logoutBtn">
+            <i class="bi bi-box-arrow-right me-2"></i>Logout
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="dashboard-main">
+      <div class="dashboard-header">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col">
+              <h1 class="dashboard-title">Settings</h1>
+              <p class="dashboard-subtitle">Manage your account preferences</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-content">
+        <div class="container-fluid">
+          <div class="row g-4">
+
+            <!-- Security Settings -->
+            <div class="col-lg-6">
+              <div class="minimal-card">
+                <div class="card-header-minimal" role="button" data-bs-toggle="collapse"
+                  data-bs-target="#passwordCollapse" aria-expanded="false" aria-controls="passwordCollapse">
+                  <div class="d-flex align-items-center">
+                    <div class="icon-circle">
+                      <i class="bi bi-shield-lock"></i>
                     </div>
-                    <span class="link-text">Dashboard</span>
-                    <div class="link-indicator"></div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link sidebar-link" href="farm-management.html">
-                    <div class="link-icon">
-                      <i class="bi bi-list-task"></i>
+                    <div class="ms-3">
+                      <h5 class="card-title-minimal">Change Password</h5>
+                      <p class="card-subtitle-minimal">Password & privacy</p>
                     </div>
-                    <span class="link-text">Farm Tasks</span>
-                    <div class="link-indicator"></div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link sidebar-link" href="profile.html">
-                    <div class="link-icon">
-                      <i class="bi bi-person"></i>
+                  </div>
+                </div>
+                <div id="passwordCollapse" class="collapse">
+                  <div class="card-body-minimal">
+                    <div class="password-form-minimal">
+                      <div class="form-group-minimal">
+                        <label class="form-label-minimal">Current Password</label>
+                        <div class="input-group-minimal">
+                          <input type="password" class="form-control-minimal" placeholder="Enter current password">
+                          <button class="password-toggle-minimal" type="button">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="form-group-minimal">
+                        <label class="form-label-minimal">New Password</label>
+                        <div class="input-group-minimal">
+                          <input type="password" class="form-control-minimal" placeholder="Enter new password">
+                          <button class="password-toggle-minimal" type="button">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="form-group-minimal">
+                        <label class="form-label-minimal">Confirm Password</label>
+                        <div class="input-group-minimal">
+                          <input type="password" class="form-control-minimal" placeholder="Confirm new password">
+                          <button class="password-toggle-minimal" type="button">
+                            <i class="bi bi-eye"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <button class="btn-update-minimal">
+                        <i class="bi bi-check"></i>
+                        Update Password
+                      </button>
                     </div>
-                    <span class="link-text">Profile</span>
-                    <div class="link-indicator"></div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active sidebar-link" href="settings.html">
-                    <div class="link-icon">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Preferences -->
+            <div class="col-lg-6">
+              <div class="minimal-card">
+                <div class="card-header-minimal" role="button" data-bs-toggle="collapse"
+                  data-bs-target="#preferencesCollapse" aria-expanded="false" aria-controls="preferencesCollapse">
+                  <div class="d-flex align-items-center">
+                    <div class="icon-circle">
                       <i class="bi bi-gear"></i>
                     </div>
-                    <span class="link-text">Settings</span>
-                    <div class="link-indicator"></div>
-                  </a>
-                </li>
-            </ul>
-            </div>
-            
-
-          </div>
-          
-          <!-- Enhanced Logout Section -->
-          <div class="sidebar-logout-section">
-            <a class="nav-link sidebar-link logout-link" href="login.html">
-              <div class="link-icon">
-                <i class="bi bi-box-arrow-right"></i>
-              </div>
-              <span class="link-text">Logout</span>
-              <div class="link-indicator"></div>
-            </a>
-          </div>
-        </div>
-      </nav>
-
-      <!-- Main Content -->
-      <main class="col-lg-12 px-4 py-4 main-content">
-        <!-- Header Section -->
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <div class="d-flex align-items-center gap-3">
-            <!-- Sidebar Toggle Button -->
-            <button class="btn btn-link p-2 border-0 sidebar-toggle-btn" type="button" style="background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.8); border-radius: 8px; transition: all 0.3s ease;">
-              <i class="bi bi-list fs-4"></i>
-            </button>
-            <div>
-              <h1 class="fw-bold text-white mb-1" style="font-size: 2.5rem; letter-spacing: 1px;">Settings</h1>
-              <p class="text-white-50 mb-0">Customize your application preferences</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Settings Section -->
-        <div class="row">
-          <div class="col-12">
-            <!-- Notification Preferences Card -->
-            <div class="card border-0 rounded-4 shadow-lg" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(20px); border: 1px solid rgba(113, 201, 101, 0.3);">
-              <div class="card-header bg-transparent border-0 p-4">
-                <h5 class="fw-bold text-white mb-0 d-flex align-items-center gap-2">
-                  <i class="bi bi-bell"></i>
-                  Notification Preferences
-                </h5>
-                <p class="text-white-50 mb-0 mt-2">Manage how you receive task reminders and updates</p>
-              </div>
-              
-              <div class="card-body p-4">
-                <div class="row g-4">
-                  <div class="col-md-6">
-                    <div class="form-check form-switch d-flex align-items-center justify-content-between p-4 rounded-3" style="background: rgba(113, 201, 101, 0.1); border: 1px solid rgba(113, 201, 101, 0.2);">
-                      <div class="d-flex align-items-center gap-3">
-                        <input class="form-check-input me-3" type="checkbox" id="webAlerts" checked>
-                        <label class="form-check-label fw-semibold text-white mb-0" for="webAlerts">Enable Web Alerts</label>
-                      </div>
-                      <div class="d-flex align-items-center gap-2">
-                        <span class="badge bg-success rounded-pill px-3 py-2 small">Active</span>
-                        <i class="bi bi-bell text-success fs-5"></i>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="col-md-6">
-                    <div class="form-check form-switch d-flex align-items-center justify-content-between p-4 rounded-3" style="background: rgba(113, 201, 101, 0.1); border: 1px solid rgba(113, 201, 101, 0.2);">
-                      <div class="d-flex align-items-center gap-3">
-                        <input class="form-check-input me-3" type="checkbox" id="emailNotifications" checked>
-                        <label class="form-check-label fw-semibold text-white mb-0" for="emailNotifications">Email Notifications</label>
-                      </div>
-                      <div class="d-flex align-items-center gap-2">
-                        <span class="badge bg-success rounded-pill px-3 py-2 small">Active</span>
-                        <i class="bi bi-envelope text-success fs-5"></i>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="col-md-6">
-                    <div class="form-check form-switch d-flex align-items-center justify-content-between p-4 rounded-3" style="background: rgba(113, 201, 101, 0.1); border: 1px solid rgba(113, 201, 101, 0.2);">
-                      <div class="d-flex align-items-center gap-3">
-                        <input class="form-check-input me-3" type="checkbox" id="smsAlerts">
-                        <label class="form-check-label fw-semibold text-white mb-0" for="smsAlerts">SMS Alerts</label>
-                      </div>
-                      <div class="d-flex align-items-center gap-2">
-                        <span class="badge bg-secondary rounded-pill px-3 py-2 small">Inactive</span>
-                        <i class="bi bi-phone text-muted fs-5"></i>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="col-md-6">
-                    <div class="form-check form-switch d-flex align-items-center justify-content-between p-4 rounded-3" style="background: rgba(113, 201, 101, 0.1); border: 1px solid rgba(113, 201, 101, 0.2);">
-                      <div class="d-flex align-items-center gap-3">
-                        <input class="form-check-input me-3" type="checkbox" id="pushNotifications" checked>
-                        <label class="form-check-label fw-semibold text-white mb-0" for="pushNotifications">Push Notifications</label>
-                      </div>
-                      <div class="d-flex align-items-center gap-2">
-                        <span class="badge bg-success rounded-pill px-3 py-2 small">Active</span>
-                        <i class="bi bi-phone-vibrate text-success fs-5"></i>
-                      </div>
+                    <div class="ms-3">
+                      <h5 class="card-title-minimal">Preferences</h5>
+                      <p class="card-subtitle-minimal">Notifications & preferences</p>
                     </div>
                   </div>
                 </div>
-                
-                <hr class="my-4 border-success border-opacity-25">
-                
-                <div class="d-flex gap-3 justify-content-end">
-                  <button type="button" class="btn py-3 px-4 rounded-4 fw-semibold shadow-sm" style="background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
-                    <i class="bi bi-arrow-clockwise me-2"></i>
-                    Reset to Default
-                  </button>
-                  <button type="submit" class="btn py-3 px-4 rounded-4 fw-semibold shadow-sm" style="background: linear-gradient(135deg, #71c965, #2c6a5d); color: white; border: none;">
-                    <i class="bi bi-save me-2"></i>
-                    Save Changes
-                  </button>
+                <div id="preferencesCollapse" class="collapse">
+                  <div class="card-body-minimal">
+                    <div class="setting-item-minimal">
+                      <div class="setting-content">
+                        <h6 class="setting-label-minimal">Email Notifications</h6>
+                        <p class="setting-desc-minimal">Receive updates via email</p>
+                      </div>
+                      <div class="setting-toggle">
+                        <div class="toggle-switch">
+                          <input type="checkbox" id="emailNotifications" checked>
+                          <label for="emailNotifications"></label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="setting-item-minimal">
+                      <div class="setting-content">
+                        <h6 class="setting-label-minimal">Task Reminders</h6>
+                        <p class="setting-desc-minimal">Get reminded about tasks</p>
+                      </div>
+                      <div class="setting-toggle">
+                        <div class="toggle-switch">
+                          <input type="checkbox" id="taskReminders" checked>
+                          <label for="taskReminders"></label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="setting-item-minimal">
+                      <div class="setting-content">
+                        <h6 class="setting-label-minimal">Weather Alerts</h6>
+                        <p class="setting-desc-minimal">Weather updates & recommendations</p>
+                      </div>
+                      <div class="setting-toggle">
+                        <div class="toggle-switch">
+                          <input type="checkbox" id="weatherAlerts">
+                          <label for="weatherAlerts"></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
   </div>
 
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Sidebar Toggle Script -->
+  <style>
+    /* Modern Minimalist Settings Styles */
+    .minimal-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      overflow: hidden;
+      height: fit-content;
+    }
+
+    .minimal-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-header-minimal {
+      padding: 24px 24px 16px 24px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      background: transparent;
+    }
+
+    .icon-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+    }
+
+    .card-title-minimal {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1e293b;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .card-subtitle-minimal {
+      font-size: 14px;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .card-body-minimal {
+      padding: 16px 24px 24px 24px;
+    }
+
+    .setting-item-minimal {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .setting-item-minimal:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .setting-content {
+      flex: 1;
+    }
+
+    .setting-label-minimal {
+      font-size: 15px;
+      font-weight: 500;
+      color: #1e293b;
+      margin: 0 0 4px 0;
+      line-height: 1.3;
+    }
+
+    .setting-desc-minimal {
+      font-size: 13px;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .setting-toggle {
+      margin-left: 16px;
+    }
+
+    /* Modern Toggle Switch */
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-switch label {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #e2e8f0;
+      transition: 0.3s;
+      border-radius: 24px;
+    }
+
+    .toggle-switch label:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.3s;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .toggle-switch input:checked+label {
+      background-color: #10b981;
+    }
+
+    .toggle-switch input:checked+label:before {
+      transform: translateX(20px);
+    }
+
+    /* Password Form Styles */
+    .password-form-minimal {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-group-minimal {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-label-minimal {
+      font-size: 14px;
+      font-weight: 500;
+      color: #374151;
+      margin: 0;
+    }
+
+    .input-group-minimal {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .form-control-minimal {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #fafafa;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .form-control-minimal:focus {
+      border-color: #10b981;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    }
+
+    .password-toggle-minimal {
+      position: absolute;
+      right: 12px;
+      background: none;
+      border: none;
+      color: #6b7280;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+      transition: color 0.2s ease;
+    }
+
+    .password-toggle-minimal:hover {
+      color: #10b981;
+    }
+
+    .btn-update-minimal {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .btn-update-minimal:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 991.98px) {
+      .minimal-card {
+        margin-bottom: 24px;
+      }
+
+      .card-header-minimal {
+        padding: 20px 20px 12px 20px;
+      }
+
+      .card-body-minimal {
+        padding: 12px 20px 20px 20px;
+      }
+
+      .icon-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
+
+      .card-title-minimal {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .setting-item-minimal {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .setting-toggle {
+        margin-left: 0;
+        align-self: flex-end;
+      }
+    }
+  </style>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const sidebarToggleBtn = document.querySelector('.sidebar-toggle-btn');
-      const sidebar = document.querySelector('.sidebar-modern');
-      const mainContent = document.querySelector('.main-content');
-      
-      sidebarToggleBtn.addEventListener('click', function() {
-        if (sidebar.classList.contains('sidebar-closed')) {
-          // Open sidebar
-          sidebar.classList.remove('sidebar-closed');
-          sidebar.classList.add('sidebar-open');
-          mainContent.classList.remove('col-lg-12');
-          mainContent.classList.add('col-lg-10', 'offset-lg-2');
-          sidebarToggleBtn.innerHTML = '<i class="bi bi-x-lg fs-4"></i>';
+    // Settings page functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      // Check if user is logged in
+      if (localStorage.getItem('isLoggedIn') !== 'true') {
+        window.location.href = 'login.html';
+        return;
+      }
+
+      // Logout functionality
+      const logoutBtn = document.getElementById('logoutBtn');
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', function (event) {
+          event.preventDefault();
+
+          // Clear all login-related data
+          localStorage.removeItem('isLoggedIn');
+          localStorage.removeItem('userEmail');
+          localStorage.removeItem('loginTime');
+          localStorage.removeItem('rememberMe');
+          localStorage.removeItem('loginAttempts');
+          localStorage.removeItem('lastLoginAttempt');
+
+          // Show logout confirmation
+          const originalText = logoutBtn.innerHTML;
+          logoutBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Logged Out';
+          logoutBtn.style.color = '#10b981';
+
+          // Redirect to login page after brief delay
+          setTimeout(() => {
+            window.location.href = 'login.html';
+          }, 1000);
+        });
+      }
+    });
+
+    // Password toggle functionality
+    document.querySelectorAll('.password-toggle-minimal').forEach(button => {
+      button.addEventListener('click', function () {
+        const input = this.parentElement.querySelector('input');
+        const icon = this.querySelector('i');
+
+        if (input.type === 'password') {
+          input.type = 'text';
+          icon.classList.remove('bi-eye');
+          icon.classList.add('bi-eye-slash');
         } else {
-          // Close sidebar
-          sidebar.classList.remove('sidebar-open');
-          sidebar.classList.add('sidebar-closed');
-          mainContent.classList.remove('col-lg-10', 'offset-lg-2');
-          mainContent.classList.add('col-lg-12');
-          sidebarToggleBtn.innerHTML = '<i class="bi bi-list fs-4"></i>';
+          input.type = 'password';
+          icon.classList.remove('bi-eye-slash');
+          icon.classList.add('bi-eye');
         }
       });
     });
+
+    // Update password button
+    document.querySelector('.btn-update-minimal').addEventListener('click', function () {
+      const originalText = this.innerHTML;
+      this.innerHTML = '<i class="bi bi-hourglass-split"></i> Updating...';
+      this.disabled = true;
+
+      setTimeout(() => {
+        this.innerHTML = originalText;
+        this.disabled = false;
+        // Show success message or handle response
+      }, 2000);
+    });
+
+    // Check if user is logged in
+    document.addEventListener('DOMContentLoaded', function () {
+      if (localStorage.getItem('isLoggedIn') !== 'true') {
+        // Redirect to login if not logged in
+        window.location.href = 'login.html';
+      }
+    });
   </script>
 </body>
+
 </html>

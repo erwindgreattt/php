@@ -1,326 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Profile - Grainity</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/sprout.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .password-toggle-btn:hover .password-toggle-icon {
-      color: #2c6a5d !important;
-    }
-    
-    .password-toggle-icon {
-      transition: color 0.2s ease;
-    }
-    
-    .password-input:focus ~ .password-toggle-btn .password-toggle-icon {
-      color: #2c6a5d !important;
-    }
-  </style>
-</head>
-
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Grainity — Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
   <body>
-  <div class="container-fluid min-vh-100">
-    <div class="row h-100">
-      <!-- Enhanced Modern Sidebar -->
-      <nav class="col-lg-2 d-none d-lg-block p-0 h-100 position-fixed sidebar-modern sidebar-closed" style="z-index: 1000;">
-        <div class="d-flex flex-column h-100 sidebar-container">
-          <!-- Enhanced Logo Section -->
-          <div class="sidebar-logo-section">
-            <a class="navbar-brand fw-bold d-flex align-items-center gap-3 text-white m-0" href="index.html">
-              <div class="logo-container">
-                <img src="images/sprout.png" alt="Logo" class="logo-image">
-                <div class="logo-glow"></div>
-              </div>
-              <span class="brand-text">Grainity</span>
-            </a>
-          </div>
-          
-          <!-- Enhanced Navigation Menu -->
-          <div class="flex-grow-1 sidebar-nav">
-            <div class="nav-section">
-              <h6 class="nav-section-title">MAIN MENU</h6>
-              <ul class="nav flex-column gap-1">
-                <li class="nav-item">
-                  <a class="nav-link sidebar-link" href="dashboard.html">
-                    <div class="link-icon">
-                      <i class="bi bi-grid-1x2"></i>
-                    </div>
-                    <span class="link-text">Dashboard</span>
-                    <div class="link-indicator"></div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link sidebar-link" href="farm-management.html">
-                    <div class="link-icon">
-                      <i class="bi bi-list-task"></i>
-                    </div>
-                    <span class="link-text">Farm Tasks</span>
-                    <div class="link-indicator"></div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active sidebar-link" href="profile.html">
-                    <div class="link-icon">
-                      <i class="bi bi-person"></i>
-                    </div>
-                    <span class="link-text">Profile</span>
-                    <div class="link-indicator"></div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link sidebar-link" href="settings.html">
-                    <div class="link-icon">
-                      <i class="bi bi-gear"></i>
-                    </div>
-                    <span class="link-text">Settings</span>
-                    <div class="link-indicator"></div>
-                  </a>
-                </li>
-            </ul>
-            </div>
-            
+    <div class="dashboard-container">
+      <!-- Sidebar Toggle Button -->
+      <button class="btn btn-outline-success d-md-none m-2 position-fixed sidebar-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" aria-expanded="false" aria-controls="sidebarCollapse">
+        <i class="bi bi-list"></i>
+      </button>
 
+      <!-- Sidebar -->
+      <div class="collapse show d-md-block" id="sidebarCollapse">
+        <div class="dashboard-sidebar">
+          <div class="sidebar-header">
+            <div class="d-flex align-items-center mb-4">
+              <i class="bi bi-leaf display-6 me-2"></i>
+              <span class="fw-bold fs-4">Grainity</span>
+            </div>
           </div>
-          
-          <!-- Enhanced Logout Section -->
-          <div class="sidebar-logout-section">
-            <a class="nav-link sidebar-link logout-link" href="login.html">
-              <div class="link-icon">
-                <i class="bi bi-box-arrow-right"></i>
-              </div>
-              <span class="link-text">Logout</span>
-              <div class="link-indicator"></div>
-            </a>
+
+          <nav class="sidebar-nav">
+            <ul class="nav flex-column gap-2">
+              <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a></li>
+              <li class="nav-item"><a class="nav-link" href="farmtask.html"><i class="bi bi-calendar2-check me-2"></i>Farm Tasks</a></li>
+              <li class="nav-item"><a class="nav-link active" href="profile.html"><i class="bi bi-person me-2"></i>Profile</a></li>
+              <li class="nav-item"><a class="nav-link" href="settings.html"><i class="bi bi-gear me-2"></i>Settings</a></li>
+            </ul>
+          </nav>
+
+          <div class="sidebar-footer">
+            <a class="nav-link logout-link" href="#" id="logoutBtn"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
           </div>
         </div>
-      </nav>
+      </div>
 
       <!-- Main Content -->
-      <main class="col-lg-12 px-4 py-4 main-content">
-        <!-- Header Section -->
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <div class="d-flex align-items-center gap-3">
-            <!-- Sidebar Toggle Button -->
-            <button class="btn btn-link p-2 border-0 sidebar-toggle-btn" type="button" style="background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.8); border-radius: 8px; transition: all 0.3s ease;">
-              <i class="bi bi-list fs-4"></i>
-            </button>
-            <div>
-              <h1 class="fw-bold text-white mb-1" style="font-size: 2.5rem; letter-spacing: 1px;">Profile</h1>
-              <p class="text-white-50 mb-0">Manage your account information</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Profile Section -->
-        <div class="row">
-          <div class="col-lg-4">
-            <!-- Profile Card -->
-            <div class="card border-0 rounded-4 shadow-lg h-100" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(20px); border: 1px solid rgba(113, 201, 101, 0.3);">
-              <div class="card-body p-4 text-center">
-                <div class="position-relative d-inline-block mb-4">
-                  <img src="images/mahboi.jpg" alt="User" class="rounded-circle border shadow-lg" style="width: 120px; height: 120px; object-fit: cover;">
-                  <div class="position-absolute bottom-0 end-0 bg-success rounded-circle border border-white" style="width: 30px; height: 30px;"></div>
-                  <button class="btn btn-sm position-absolute top-0 end-0 bg-white rounded-circle shadow-sm" style="width: 35px; height: 35px; border: none;">
-                    <i class="bi bi-camera text-dark"></i>
-                  </button>
-                </div>
-                
-                <h4 class="fw-bold mb-2 text-white">
-                  IShowMeat 
-                  <i class="bi bi-patch-check-fill text-success ms-2"></i>
-                </h4>
-                <span class="badge rounded-pill px-3 py-2 mb-3" style="background: linear-gradient(135deg, #28a745, #1e7e34); color: white;">Aura Farmer</span>
-                
-                <div class="row g-3 text-start">
-                  <div class="col-12">
-                    <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
-                      <small class="text-white-50 d-block mb-1">Email</small>
-                      <span class="fw-semibold text-white">ishowmeat@gmail.com</span>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
-                      <small class="text-white-50 d-block mb-1">Username</small>
-                      <span class="fw-semibold text-white">IShowMeat</span>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
-                      <small class="text-white-50 d-block mb-1">Member Since</small>
-                      <span class="fw-semibold text-white">March 2024</span>
-                    </div>
-                  </div>
-                </div>
+      <div class="dashboard-main">
+        <div class="dashboard-header">
+          <div class="container-fluid">
+            <div class="row align-items-center">
+              <div class="col">
+                <h1 class="dashboard-title">Profile</h1>
+                <p class="dashboard-subtitle">View and manage your account, preferences and recent activity.</p>
               </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-8">
-            <!-- Profile Information -->
-            <div class="card border-0 rounded-4 shadow-lg h-100" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(20px); border: 1px solid rgba(113, 201, 101, 0.3);">
-              <div class="card-header bg-transparent border-0 p-4">
-                <h5 class="fw-bold text-white mb-0 d-flex align-items-center gap-2">
-                  <i class="bi bi-person"></i>
-                  Profile Information
-                </h5>
-              </div>
-              <div class="card-body p-4">
-                <div class="row g-3 mb-4">
-                  <div class="col-md-6">
-                    <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
-                      <small class="text-white-50 d-block mb-1">First Name</small>
-                      <span class="fw-semibold text-white">IShow</span>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
-                      <small class="text-white-50 d-block mb-1">Last Name</small>
-                      <span class="fw-semibold text-white">Meat</span>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
-                      <small class="text-white-50 d-block mb-1">Role</small>
-                      <span class="fw-semibold text-white">Aura Farmer</span>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="p-3 rounded-3" style="background: rgba(113, 201, 101, 0.1);">
-                      <small class="text-white-50 d-block mb-1">Password</small>
-                      <span class="text-white-50">••••••••</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <button class="btn w-100 py-3 rounded-4 fw-semibold shadow-sm d-flex align-items-center justify-content-center gap-2" type="button" data-bs-toggle="collapse" data-bs-target="#editProfileCollapse" aria-expanded="false" aria-controls="editProfileCollapse" style="background: linear-gradient(135deg, #71c965, #2c6a5d); color: white; border: none;">
-                  <i class="bi bi-pencil-square"></i>
-                  Edit Profile
-                </button>
+              <div class="col-auto">
+                <button class="btn btn-outline-secondary me-2" data-bs-toggle="modal" data-bs-target="#editProfileModal"><i class="bi bi-pencil-square me-1"></i>Edit</button>
+                <button class="btn btn-primary" id="btnMessage"><i class="bi bi-envelope-paper me-1"></i>Message</button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Edit Profile Form -->
-        <div class="collapse" id="editProfileCollapse">
-          <div class="row mt-4">
-            <div class="col-12">
-              <div class="card border-0 rounded-4 shadow-lg" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(20px); border: 1px solid rgba(113, 201, 101, 0.3);">
-                <div class="card-header bg-transparent border-0 p-4">
-                  <h5 class="fw-bold text-white mb-0 d-flex align-items-center gap-2">
-                    <i class="bi bi-pencil-square"></i>
-                    Edit Profile Information
-                  </h5>
-                </div>
-                <div class="card-body p-4">
-                  <form>
-                    <div class="row g-3">
-                      <div class="col-md-6">
-                        <label for="firstName" class="form-label fw-semibold text-white">First Name</label>
-                        <input type="text" class="form-control rounded-3 border-0" id="firstName" placeholder="Enter first name" value="Ishow"background: rgba(255, 255, 255, 0.9); color: #333;">
-                      </div>
-                      <div class="col-md-6">
-                        <label for="lastName" class="form-label fw-semibold text-white">Last Name</label>
-                        <input type="text" class="form-control rounded-3 border-0" id="lastName" placeholder="Enter last name" value="Meat" style="background: rgba(255, 255, 255, 0.9); color: #333;">
-                      </div>
-                      <div class="col-md-6">
-                        <label for="role" class="form-label fw-semibold text-white">Role</label>
-                        <select class="form-select rounded-3 border-0" id="role" style="background: rgba(255, 255, 255, 0.9); color: #333;">
-                          <option>Admin</option>
-                          <option selected>Aura Farmer</option>
-                          <option>Worker</option>
-                          <option>Farmer</option>
-                        </select>
-                      </div>
-                      <div class="col-md-6">
-                        <label for="email" class="form-label fw-semibold text-white">Email</label>
-                        <input type="email" class="form-control rounded-3 border-0" id="email" placeholder="Enter email address" value="IshowMeat.com" style="background: rgba(255, 255, 255, 0.9); color: #333;">
-                      </div>
-                      <div class="col-md-6">
-                        <label for="username" class="form-label fw-semibold text-white">Username</label>
-                        <input type="text" class="form-control rounded-3 border-0" id="username" placeholder="Enter username" value="ishowmeat" style="background: rgba(255, 255, 255, 0.9); color: #333;">
-                      </div>
-                      <div class="col-md-6">
-                        <label for="password" class="form-label fw-semibold text-white">Password</label>
-                        <div class="position-relative">
-                          <input type="password" class="form-control rounded-3 border-0 password-input" id="password" placeholder="Enter password" value="password123" style="background: rgba(255, 255, 255, 0.9); color: #333; padding-right: 50px;">
-                          <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y me-2 password-toggle-btn" style="z-index: 10; color: #6c757d; text-decoration: none; padding: 0.375rem; cursor: pointer;" onclick="togglePasswordVisibility('password', 'passwordToggle')">
-                            <i class="bi bi-eye password-toggle-icon" id="passwordToggle"></i>
-                          </button>
+        <div class="dashboard-content">
+          <div class="container-fluid">
+            <div class="row g-4">
+              <!-- Left: Profile banner & overview -->
+              <div class="col-lg-4">
+                <div class="card dashboard-card">
+                  <div class="position-relative">
+                    <div class="img-fluid w-100" style="height:140px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-top-left-radius: .75rem; border-top-right-radius: .75rem;" alt="banner"></div>
+                    <div class="position-absolute" style="bottom:-16px; left:1rem;">
+                      <div class="d-flex align-items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle border border-white" style="width:96px; height:96px; object-fit:cover;" alt="avatar">
+                        <div class="ms-3">
+                          <h5 class="mb-0">John Doe</h5>
+                          <small class="text-muted">Farmer</small>
                         </div>
                       </div>
                     </div>
-                    
-                    <div class="d-flex gap-3 mt-4">
-                      <button type="submit" class="btn flex-grow-1 py-3 rounded-4 fw-semibold shadow-sm" style="background: linear-gradient(135deg, #71c965, #2c6a5d); color: white; border: none;">
-                        <i class="bi bi-save me-2"></i>
-                        Save Changes
-                      </button>
-                      <button type="button" class="btn py-3 rounded-4 fw-semibold shadow-sm" data-bs-toggle="collapse" data-bs-target="#editProfileCollapse" style="background: rgba(255, 255, 255, 0.9); color: #2c6a5d; border: 1px solid rgba(44, 106, 93, 0.2);">
-                        Cancel
-                      </button>
+                  </div>
+                  <div class="card-body mt-4 pt-4">
+                    <div class="d-flex justify-content-between mb-3">
+                      <div>
+                        <h6 class="mb-0">Member Since</h6>
+                        <small class="text-muted">March 2023</small>
+                      </div>
+                      <div class="text-end">
+                        <h6 class="mb-0">Tasks</h6>
+                        <small class="text-muted">128</small>
+                      </div>
                     </div>
-                  </form>
+
+                    <hr>
+
+                    <h6 class="mb-2">Contact</h6>
+                    <p class="mb-1"><i class="bi bi-envelope me-2"></i> john.doe@email.com</p>
+                    <p class="mb-1"><i class="bi bi-telephone me-2"></i> +1 234 567 890</p>
+                    <p class="mb-0"><i class="bi bi-geo-alt me-2"></i> Farmville, CA</p>
+
+                    <div class="d-grid gap-2 mt-4">
+                      <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#changePhotoModal"><i class="bi bi-camera me-1"></i>Change Photo</button>
+                      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editProfileModal"><i class="bi bi-pencil-square me-1"></i>Edit Profile</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Quick Actions removed -->
+              </div>
+
+              <!-- Right: Activity & Edit Form -->
+              <div class="col-lg-8">
+                <!-- About and Recent Activity removed as requested -->
+
+                <div class="card dashboard-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Public Profile</h5>
+                    <form>
+                      <div class="mb-3">
+                        <label class="form-label">Display name</label>
+                        <input class="form-control" value="John Doe">
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Bio</label>
+                        <textarea class="form-control" rows="4">Experienced farmer focusing on sustainable grain production.</textarea>
+                      </div>
+                      <div class="d-flex gap-2">
+                        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="modal" data-bs-target="#editProfileModal">Advanced Edit</button>
+                        <button class="btn btn-primary" type="submit">Save</button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
-  </div>
 
+    <!-- Edit Profile Modal -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editProfileModalLabel"><i class="bi bi-pencil-square me-1"></i>Edit Profile</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">First name</label>
+                <input class="form-control" value="John">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Last name</label>
+                <input class="form-control" value="Doe">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input class="form-control" value="john.doe@email.com" type="email">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Phone</label>
+                <input class="form-control" value="+1 234 567 890">
+              </div>
+              <div class="col-12">
+                <label class="form-label">Bio</label>
+                <textarea class="form-control" rows="4">Experienced farmer focusing on sustainable grain production.</textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Change Photo Modal -->
+    <div class="modal fade" id="changePhotoModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="modal-title">Change Photo</h6>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <p class="text-muted">Upload a new profile photo (mock UI).</p>
+            <input class="form-control" type="file" accept="image/*">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success">Upload</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Sidebar Toggle Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const sidebarToggleBtn = document.querySelector('.sidebar-toggle-btn');
-      const sidebar = document.querySelector('.sidebar-modern');
-      const mainContent = document.querySelector('.main-content');
-      
-      sidebarToggleBtn.addEventListener('click', function() {
-        if (sidebar.classList.contains('sidebar-closed')) {
-          // Open sidebar
-          sidebar.classList.remove('sidebar-closed');
-          sidebar.classList.add('sidebar-open');
-          mainContent.classList.remove('col-lg-12');
-          mainContent.classList.add('col-lg-10', 'offset-lg-2');
-          sidebarToggleBtn.innerHTML = '<i class="bi bi-x-lg fs-4"></i>';
-        } else {
-          // Close sidebar
-          sidebar.classList.remove('sidebar-open');
-          sidebar.classList.add('sidebar-closed');
-          mainContent.classList.remove('col-lg-10', 'offset-lg-2');
-          mainContent.classList.add('col-lg-12');
-          sidebarToggleBtn.innerHTML = '<i class="bi bi-list fs-4"></i>';
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Profile page functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        // Check if user is logged in
+        if (localStorage.getItem('isLoggedIn') !== 'true') {
+          window.location.href = 'login.html';
+          return;
+        }
+
+        // Logout functionality
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+          logoutBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            // Clear all login-related data
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('loginTime');
+            localStorage.removeItem('rememberMe');
+            localStorage.removeItem('loginAttempts');
+            localStorage.removeItem('lastLoginAttempt');
+            
+            // Show logout confirmation
+            const originalText = logoutBtn.innerHTML;
+            logoutBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Logged Out';
+            logoutBtn.style.color = '#10b981';
+            
+            // Redirect to login page after brief delay
+            setTimeout(() => {
+              window.location.href = 'login.html';
+            }, 1000);
+          });
         }
       });
-    });
-  </script>
-  
-  <script>
-    function togglePasswordVisibility(inputId, iconId) {
-      const input = document.getElementById(inputId);
-      const icon = document.getElementById(iconId);
-      
-      if (input.type === 'password') {
-        input.type = 'text';
-        icon.classList.remove('bi-eye');
-        icon.classList.add('bi-eye-slash');
-      } else {
-        input.type = 'password';
-        icon.classList.remove('bi-eye-slash');
-        icon.classList.add('bi-eye');
-      }
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>
