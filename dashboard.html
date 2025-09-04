@@ -70,7 +70,7 @@
             </div>
             <div class="col-auto">
               <div class="dashboard-actions">
-                <button class="btn btn-outline-success me-2">
+                <button id="addTaskBtn" class="btn btn-outline-success me-2">
                   <i class="bi bi-plus-circle me-2"></i>Add Task
                 </button>
                 <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#notificationsModal">
@@ -92,7 +92,7 @@
                   <h5 class="card-title">
                     <i class="bi bi-calendar2-check me-2"></i>Today's Farm Tasks
                   </h5>
-                  <button class="btn btn-sm btn-outline-success">View All</button>
+                  <button id="viewAllTasksBtn" class="btn btn-sm btn-outline-success">View All</button>
                 </div>
                 <div class="card-body">
                   <div class="task-list">
@@ -279,6 +279,13 @@
           welcomeTitle.textContent = `Welcome back, ${emailName}!`;
         }
       }
+
+      // Redirect Add Task and View All to farmtask.html
+      const addTaskBtn = document.getElementById('addTaskBtn');
+      const viewAllBtn = document.getElementById('viewAllTasksBtn');
+      const goToTasks = () => { window.location.href = 'farmtask.html'; };
+      if (addTaskBtn) addTaskBtn.addEventListener('click', goToTasks);
+      if (viewAllBtn) viewAllBtn.addEventListener('click', goToTasks);
 
       // Notifications demo data & actions
       const notifAll = document.getElementById('notifAll');

@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="image/leaf.png">
     <link href="css/styles.css" rel="stylesheet" />
   </head>
-  <body>
+  <body class="profile-page">
     <div class="dashboard-container">
       <!-- Sidebar Toggle Button -->
       <button class="btn btn-outline-success d-md-none m-2 position-fixed sidebar-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" aria-expanded="false" aria-controls="sidebarCollapse">
@@ -58,78 +58,72 @@
         </div>
 
         <div class="dashboard-content">
-          <div class="container-fluid">
-            <div class="dashboard-card task-list-card" style="margin-top: -8px;">
-              <div class="card-body">
-                <div class="row g-4">
-                  <!-- Left: Profile banner & overview -->
-                  <div class="col-lg-4">
-                    <div class="card dashboard-card">
-                      <div class="position-relative">
-                        <div class="img-fluid w-100" style="height:140px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-top-left-radius: .75rem; border-top-right-radius: .75rem;" alt="banner"></div>
-                        <div class="position-absolute" style="bottom:-16px; left:1rem;">
-                          <div class="d-flex align-items-center">
-                            <div style="position:relative; display:inline-block;">
-                              <img src="image/kamil.jpg" class="rounded-circle border border-white" style="width:96px; height:96px; object-fit:cover;" alt="avatar">
-                              <button class="btn btn-success btn-sm rounded-circle" data-bs-toggle="modal" data-bs-target="#changePhotoModal" title="Change photo" style="position:absolute; right:-6px; bottom:-6px; width:32px; height:32px; display:flex; align-items:center; justify-content:center; padding:0;">
-                                <i class="bi bi-camera"></i>
-                              </button>
-                            </div>
-                            <div class="ms-3">
-                              <h5 class="mb-0">John Doe</h5>
-                              <small class="text-muted">Farmer</small>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card-body mt-4 pt-4">
-                        <div class="d-flex justify-content-between mb-3">
-                          <div>
-                            <h6 class="mb-0">Member Since</h6>
-                            <small class="text-muted">March 2023</small>
-                          </div>
-                          <div class="text-end">
-                            <h6 class="mb-0">Tasks</h6>
-                            <small class="text-muted">128</small>
-                          </div>
-                        </div>
-
-                        <hr>
-
-                        <h6 class="mb-2">Contact</h6>
-                        <p class="mb-1"><i class="bi bi-envelope me-2"></i> john.doe@email.com</p>
-                        <p class="mb-1"><i class="bi bi-telephone me-2"></i> +1 234 567 890</p>
-                        <p class="mb-0"><i class="bi bi-geo-alt me-2"></i> Farmville, CA</p>
-
-                        <div class="d-grid gap-2 mt-4">
-                          
-                        </div>
-                      </div>
+          <div class="container-fluid profile-layout">
+            <div class="row g-3">
+              <!-- Profile header card -->
+              <div class="col-12">
+                <div class="card dashboard-card">
+                  <div class="card-body d-flex align-items-center">
+                    <div class="position-relative me-3" style="line-height:0;">
+                      <img src="image/kamil.jpg" alt="avatar" class="rounded-circle profile-mini-avatar">
+                      <button class="btn btn-success btn-sm rounded-circle" title="Change photo" data-bs-toggle="modal" data-bs-target="#changePhotoModal" style="position:absolute; right:-6px; bottom:-6px; width:28px; height:28px; display:flex; align-items:center; justify-content:center; padding:0;">
+                        <i class="bi bi-camera"></i>
+                      </button>
                     </div>
-
-                    <!-- Quick Actions removed -->
+                    <div>
+                      <div class="fw-semibold">John Doe</div>
+                      <div class="text-success fw-semibold" style="font-size:0.9rem;">Admin</div>
+                    </div>
                   </div>
+                </div>
+              </div>
 
-                  <!-- Right: Activity & Edit Form -->
-                  <div class="col-lg-8">
-                    <!-- About and Recent Activity removed as requested -->
-
-                    <div class="card dashboard-card">
-                      <div class="card-body">
-                        <h5 class="card-title">Public Profile</h5>
-                        <form id="publicProfileForm">
-                          <div class="mb-3">
-                            <label class="form-label">Display name</label>
-                            <input class="form-control" value="John Doe" disabled>
-                          </div>
-                          <div class="mb-3">
-                            <label class="form-label">Bio</label>
-                            <textarea class="form-control" rows="4" disabled>Experienced farmer focusing on sustainable grain production.</textarea>
-                          </div>
-                          <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#editProfileModal"><i class="bi bi-pencil-square me-1"></i>Edit Profile</button>
-                        </form>
+              <!-- Personal Information -->
+              <div class="col-12">
+                <div class="card dashboard-card">
+                  <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="card-title mb-0">Personal Information</h6>
+                    <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editProfileModal"><i class="bi bi-pencil-square me-1"></i>Edit</button>
+                  </div>
+                  <div class="card-body">
+                    <div class="row gy-3">
+                      <div class="col-md-4">
+                        <div class="info-label">First Name</div>
+                        <div class="info-value">John</div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="info-label">Last Name</div>
+                        <div class="info-value">Doe</div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="info-label">Email Address</div>
+                        <div class="info-value">john.doe@email.com</div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="info-label">Phone Number</div>
+                        <div class="info-value">(+62) 21 2554-5846</div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="info-label">User Role</div>
+                        <div class="info-value">Admin</div>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bio -->
+              <div class="col-12">
+                <div class="card dashboard-card">
+                  <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="card-title mb-0">Bio</h6>
+                  </div>
+                  <div class="card-body">
+                    <p class="mb-0 text-secondary" style="line-height:1.7;">
+                      Experienced farmer focusing on sustainable grain production. Passionate about
+                      efficient task scheduling, weather-informed decisions, and data‑driven practices to
+                      improve yields while protecting the environment.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -148,32 +142,43 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form class="row g-3">
+            <form id="editForm" class="row g-3">
               <div class="col-md-6">
                 <label class="form-label">First name</label>
-                <input class="form-control" value="John">
+                <input id="firstNameInput" class="form-control" value="John">
               </div>
               <div class="col-md-6">
                 <label class="form-label">Last name</label>
-                <input class="form-control" value="Doe">
+                <input id="lastNameInput" class="form-control" value="Doe">
               </div>
               <div class="col-md-6">
                 <label class="form-label">Email</label>
-                <input class="form-control" value="john.doe@email.com" type="email">
+                <input id="emailInput" class="form-control" value="john.doe@email.com" type="email">
               </div>
               <div class="col-md-6">
                 <label class="form-label">Phone</label>
-                <input class="form-control" value="+1 234 567 890">
+                <input id="phoneInput" class="form-control" value="(+62) 21 2554-5846">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">User Role</label>
+                <select id="roleSelect" class="form-select">
+                  <option>Admin</option>
+                  <option>Farmer</option>
+                  <option>Manager</option>
+                  <option>Viewer</option>
+                </select>
               </div>
               <div class="col-12">
                 <label class="form-label">Bio</label>
-                <textarea class="form-control" rows="4">Experienced farmer focusing on sustainable grain production.</textarea>
+                <textarea id="bioInput" class="form-control" rows="4">Experienced farmer focusing on sustainable grain production. Passionate about
+efficient task scheduling, weather-informed decisions, and data‑driven practices to
+improve yields while protecting the environment.</textarea>
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button id="saveProfileBtn" type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
@@ -238,6 +243,57 @@
             setTimeout(() => {
               window.location.href = 'login.html';
             }, 1000);
+          });
+        }
+
+        // Prefill modal with current values when opened
+        const editModal = document.getElementById('editProfileModal');
+        const saveBtn = document.getElementById('saveProfileBtn');
+        if (editModal) {
+          editModal.addEventListener('show.bs.modal', function () {
+            const firstNameText = document.querySelector('.card .card-title.mb-0:text("Personal Information")');
+            const infoValues = document.querySelectorAll('.card .card-title.mb-0:text("Personal Information") ~ .card-body .info-value');
+            const bioParagraph = document.querySelector('.card .card-title.mb-0:text("Bio") ~ .card-body p');
+            const roleBadge = document.querySelector('.card-body .text-success');
+
+            if (infoValues.length >= 4) {
+              document.getElementById('firstNameInput').value = infoValues[0].textContent.trim();
+              document.getElementById('lastNameInput').value  = infoValues[1].textContent.trim();
+              document.getElementById('emailInput').value     = infoValues[2].textContent.trim();
+              document.getElementById('phoneInput').value     = infoValues[3].textContent.trim();
+            }
+            document.getElementById('bioInput').value = bioParagraph ? bioParagraph.textContent.trim() : '';
+            const roleSelect = document.getElementById('roleSelect');
+            if (roleSelect && roleBadge) roleSelect.value = roleBadge.textContent.trim();
+          });
+        }
+
+        // Save changes back to the page
+        if (saveBtn) {
+          saveBtn.addEventListener('click', function() {
+            const firstName = document.getElementById('firstNameInput').value.trim();
+            const lastName  = document.getElementById('lastNameInput').value.trim();
+            const email     = document.getElementById('emailInput').value.trim();
+            const phone     = document.getElementById('phoneInput').value.trim();
+            const bio       = document.getElementById('bioInput').value.trim();
+            const role      = document.getElementById('roleSelect').value;
+
+            const infoValues = document.querySelectorAll('.card:has(.card-title.mb-0):has(.card-title:contains("Personal Information")) .info-value');
+            if (infoValues.length >= 4) {
+              if (firstName) infoValues[0].textContent = firstName;
+              if (lastName)  infoValues[1].textContent = lastName;
+              if (email)     infoValues[2].textContent = email;
+              if (phone)     infoValues[3].textContent = phone;
+            }
+
+            const roleBadge = document.querySelector('.card-body .text-success');
+            if (roleBadge) roleBadge.textContent = role;
+
+            const bioParagraph = document.querySelector('.card:has(.card-title:contains("Bio")) p');
+            if (bioParagraph && bio) bioParagraph.textContent = bio;
+
+            const modal = bootstrap.Modal.getInstance(editModal);
+            if (modal) modal.hide();
           });
         }
       });
