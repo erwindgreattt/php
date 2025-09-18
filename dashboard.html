@@ -89,10 +89,12 @@
             <div class="col-lg-8">
               <div class="dashboard-card">
                 <div class="card-header">
-                  <h5 class="card-title">
-                    <i class="bi bi-calendar2-check me-2"></i>Today's Farm Tasks
-                  </h5>
-                  <button id="viewAllTasksBtn" class="btn btn-sm btn-outline-success">View All</button>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">
+                      <i class="bi bi-calendar2-check me-2"></i>Today's Farm Tasks
+                    </h5>
+                    <button id="viewAllTasksBtn" class="btn btn-sm btn-outline-success">View All</button>
+                  </div>
                 </div>
                 <div class="card-body">
                   <div class="task-list">
@@ -258,10 +260,12 @@
           localStorage.removeItem('loginAttempts');
           localStorage.removeItem('lastLoginAttempt');
           
-          // Show logout confirmation
-          const originalText = logoutBtn.innerHTML;
-          logoutBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Logged Out';
+          // Show logout confirmation (icon-only to fit slim sidebar)
+          const originalHTML = logoutBtn.innerHTML;
+          logoutBtn.innerHTML = '<i class="bi bi-check-circle"></i>';
           logoutBtn.style.color = '#10b981';
+          logoutBtn.setAttribute('title', 'Logged Out');
+          logoutBtn.setAttribute('data-bs-original-title', 'Logged Out');
           
           // Redirect to login page after brief delay
           setTimeout(() => {
